@@ -1,0 +1,74 @@
+
+.header h2 {
+	margin: 0;
+}
+.header a {
+	color: white;
+}
+.header a:hover, .header a:focus {
+	color: lightgrey;
+}
+
+.bandeau{
+	display: flex;
+	justify-content: space-between;
+	padding: 5px;
+	padding-top: 0px;
+	margin-top: 0px;
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+}
+.bandeau a{
+	color: white;
+}
+#logo{
+	max-height: 30px;
+}
+a{
+	color: white;
+}
+.dropdown{
+	border: none;
+}
+a:hover{
+	color: rgb(200,200,200);
+}
+.menu_liste{
+	color: white;
+	background-color: rgba(5,5,5,0.9);
+	border-style: ridge;
+}
+
+.menu_liste li a{
+	color: white;
+}
+.element_bandeau{
+	padding: 7px;
+	padding-top: 2px;
+}
+.keyword *{
+	color: rgba(0,0,0,0);
+	font-size: 7px;
+	line-height: 7px;
+	font-weight: 100;
+	margin: 0px;
+	padding: 0px; 
+}
+.keyword {
+	margin: 0px;
+	padding: 0px; 
+	background-color: rgb(0,128,128);
+}
+
+@media all and (min-device-width: 480px){
+	#burger{
+		text-align: left;
+	}
+	#accueil{
+		text-align: right;
+	}
+	#logo_bandeau{
+		display: flex;
+		justify-content: center;
+	}
+}

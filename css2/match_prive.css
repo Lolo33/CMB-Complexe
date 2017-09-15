@@ -1,0 +1,165 @@
+@media all and (max-device-width: 480px){
+}
+@media all and (min-device-width: 480px){
+	#titre_corps{
+		padding: 15px;
+		margin: 0px;
+		color: rgb(50,50,50);
+		background-color: rgb(215,220,225);
+	}
+	#creneaux{
+		padding: 10px;
+	}
+	#header_fdm{
+		padding-top: 15px;
+		padding-bottom: 20px;
+		font-size: 16px;
+		color: black;
+	}
+	#header_fdm *{
+		font-size: 16px;
+	}
+	#descriptif{
+		font-size: 14px;
+	}
+	#cont_liste-msg-tournoi{
+		color: rgb(20,20,20);
+	}
+	.ss-titre{
+		padding: 10px;
+		color: rgb(20,20,20);
+		background-color: rgb(235,238,241);
+		padding-bottom: 20px;
+		border-bottom: solid 1px rgb(215,220,225);
+	}
+	.ss-titre2{
+		padding-top: 10px;
+		font-size: 15px;
+	}
+	.ligne_joueur{
+		margin: 2px;
+		font-size: 13px;
+		background-color: #008080;
+	}
+	.ligne_joueur *{
+		font-size: 13px;
+	}
+	.ligne_joueur:hover{
+		background-color: #109090;
+		cursor: pointer;
+	}
+	.lien2{
+		font-size: 12px;
+		color: rgb(66,133,244);
+	}
+	.lien2 span{	
+		font-size: 12px;
+	}
+	.ligne_joueur span, .ligne_remplacant span{
+		flex: 1;
+	}
+	#div_btn > .btn{
+		margin-right: 10%;
+		margin-left: 10%;
+		width: 30%;
+	} 
+	#div_btn{
+		padding: 15px;
+		border-top: solid 1px rgb(215,220,225);
+		border-bottom: solid 1px rgb(215,220,225);
+
+	}
+	.creneau_ligne{
+		font-size: 12px;
+		margin-top: 5px;
+		padding: 3px;
+		border-radius: 3px;
+		background-color: rgb(66,133,244);
+		align-items: center;
+	}
+	.creneau_ligne_element_avatar img{
+		max-height: 30px;
+		max-width: 30px;
+	}
+	.creneau_ligne *{
+		font-size: 12;
+		line-height: 12px;
+	}
+	.creneau_ligne_element *{
+		align-self: center;
+	}
+	.creneau_ligne_element_bouttons{
+		margin: 0px;
+		width: 40%;
+	}
+	.creneau_ligne_element_heure{
+		margin: 0px;
+		width: 40%;
+	}
+	.creneau_ligne_element_avatar{
+		margin: 0px;
+		width: 20%;
+	}
+	.btn{
+		padding: 4px 6px;
+	}
+	.modal-content{
+		color: black;
+	}
+	.ligne_joueur_creneau{
+		align-items: center;
+		text-align: left;
+		color: black;
+		padding: 4px;
+		font-size: 12px;
+	}
+	#div_participants{
+		border-radius: 4px;
+		border: solid 1px rgb(223,224,228);
+		margin: 15px;
+	}
+	#ligne_btn_participants{
+		padding: 15px;
+		background-color: rgb(235,238,241);
+		border-top: solid 1px rgb(215,220,225);
+	}
+	.ligne_joueur_creneau img{
+		max-height: 30px;
+		max-width: 30px;
+	}
+	.ami_element img{
+		max-height: 25px;
+		max-width: 25px;
+	}
+	#liste_amis, #champs{
+		color: rgb(10,10,10);
+		padding: 7px;
+		align-items: center;
+	}
+	.liste{
+		flex: 1;
+		padding: 8px;
+	}
+	#liste_amis{
+		text-align: left;
+	}
+	#liste_amis label{
+		width: 100%;
+	}
+	.ami_element{
+		flex: 1;
+	}
+	.ami_element_checkbox{
+		text-align: center;
+	}
+	.ami_element_avatar{
+		text-align: left;
+	}
+	.ami_element_pseudo{
+		text-align: left;
+	}
+	#modal-content{
+		background-color: #008080;
+		color: white;
+	}
+}

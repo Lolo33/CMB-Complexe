@@ -1,0 +1,65 @@
+#volet{
+	background-color: rgba(235,235,235,0.95);
+	background-color: rgb(142,200,237);
+	background-color: rgb(104,159,56);
+	background-color: rgb(66,133,244);
+	background-color: #008080;
+	color: 
+	color: white;
+	padding: 2px;
+	margin: 0;
+	width: 10%;
+	min-width: 100px;
+	min-height: 570px;
+	border-right: solid 3px rgb(200,200,200);
+}
+#volet .glyphicon {
+	margin-top: 2px;
+}
+#volet div{
+	margin: 2%;
+	color: white;
+	min-height: 20px;
+}
+#volet div a:hover, #volet .active{
+	background-color:rgb(220,220,220);
+	color: rgb(0,62,117);
+}
+#volet div a{
+	padding: 1%;
+	color: black;
+	color: rgb(20,20,20);
+	color: white;
+	border-radius: 5px;
+	display: block;
+	width: 100%;
+}
+
+#volet div a *{
+}
+#volet div:hover{
+	color: black;
+}
+#volet_titre {
+	margin: 2% auto 2%;
+	border-bottom: 1px solid lightgrey;
+}
+.separateur-volet {
+	border-color: lightgrey;
+	margin:5px;
+}
+#post-avis h3 {
+	color: black;
+	font-size: 12px;
+}
+#post-avis b{
+	color: black;
+}
+#post-avis{
+	margin: 2px;
+}
+@media only screen and (max-device-width:480px) {
+	#div1-1{
+		display: none;
+	}
+}

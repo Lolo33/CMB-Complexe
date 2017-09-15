@@ -1,0 +1,193 @@
+.grad_grey {
+    background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(red, yellow); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(red, yellow); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(red, yellow); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(red, yellow); /* Standard syntax */
+}
+.bandeau{
+	background-color: #008080;
+}
+#page > .footer_keyword *{
+	color: rgba(0,0,0,0);
+	background-color: rgba(0,0,0,0);
+	font-size: 7px;
+	line-height: 7px;
+	font-weight: 100;
+	margin: 0px;
+	padding: 0px; 
+}
+#page > .footer_keyword {
+	margin: 0px;
+	padding: 0px; 
+	background-color: rgba(0,0,0,0);
+	position: bottom;
+}
+@media all and (max-device-width: 480px){
+	body{
+		background-color: white;
+		background-color: rgb(233,235,238);
+		margin:	0px;
+		color: white;
+	}
+	body * {
+		margin:	0px;
+		font-size: 11px;
+		font-weight: 100;
+	}
+	body, #page, #corps, .corps {
+	  -webkit-box-sizing: border-box;
+	  -moz-box-sizing: border-box;
+	  box-sizing: unset;
+	  white-space: normal;
+	}
+	.champ{
+	margin: 0.5rem;
+	border-radius: 1.2rem;
+	border-style: none;
+	height: 2rem; 
+	width: 15rem;
+	}
+	#inscription *, #connexion *{
+		text-align: center;
+	}
+	.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+		padding: 1px;
+	}
+	#page{
+		overflow-y: scroll;
+		background-image: url('../img/fond.png');
+		background-size: cover;
+	}
+	.bande{
+		display: flex;
+		padding: 1px;
+		align-items: center;
+		background-color: rgba(0,0,0,0.7);
+		min-height: 25px;
+	}
+	.element_bandeau{
+		flex: 1;
+		text-align: center;
+	}
+	.section1{
+		margin: 7px;
+		padding: 7px;
+		background-color: rgb(246,247,249);
+		border-radius: 2px;
+		/*background-image: url('../img/football-field.jpg');*/
+		background-size: cover;
+		background-position: center;
+		font-size: 12px;
+		color: #40454f;
+	}
+}
+@media all and (min-device-width: 480px){
+	body{
+		color: white;
+		overflow-y: scroll;
+		background-image: url('../img/11057292_364955420374697_3214012838132976049_o.jpg');
+		/background-color: rgb(235,238,241);
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	body * {
+		margin:	0px;
+		font-size: 16px;
+		font-weight: 500;
+	}
+	body, #page, #corps, .corps {
+	  -webkit-box-sizing: border-box;
+	  -moz-box-sizing: border-box;
+	  box-sizing: unset;
+	  white-space: normal;
+	}
+	.ligne_sm{
+		display: flex;
+	}
+	.espacer1_sm{
+		justify-content: space-around;
+	}
+	.espacer_sm{
+		justify-content: space-between;
+	}
+	.champ{
+	margin: 0.5rem;
+	border-radius: 1.2rem;
+	border-style: none;
+	height: 2rem; 
+	width: 15rem;
+	}
+	#inscription *, #connexion *{
+		text-align: center;
+	}
+	.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+		padding: 1px;
+	}
+	#page{
+		padding-right: 15%;
+		padding-left: 15%;
+	}
+	#corps{
+		background-color: white;
+		margin-top: 20px;
+		border: solid 1px rgb(223,224,228);
+
+	}
+	.modal-dialog{
+		margin-left: 25%;
+		margin-right: 25%;
+		width: 50%;
+	}
+	.bande{
+		display: flex;
+		padding: 4px;
+		align-items: center;
+		background-color: rgba(241,243,245,0.7);
+		min-height: 50px;
+	}
+	.element_bandeau{
+		flex: 1;
+		text-align: center;
+	}
+	.section1{
+		margin: 7px;
+		padding: 7px;
+		background-color: rgb(246,247,249);
+		border-radius: 2px;
+		/*background-image: url('../img/football-field.jpg');*/
+		background-size: cover;
+		background-position: center;
+		font-size: 12px;
+		color: #40454f;
+	}
+}
+
+.center {
+	text-align: center;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.ligne{
+	display: flex;
+}
+.espacer1{
+	justify-content: space-around;
+}
+.espacer{
+	justify-content: space-between;
+}
+.text-left{
+	text-align: left;
+}
+.text-right{
+	text-align: right;
+}
+.blanc{
+	background-color: white;
+	color: rgb(10,10,10);
+}

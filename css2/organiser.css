@@ -1,0 +1,88 @@
+#modal_complexe .modal-content{
+	background-color: rgb(241,243,245);
+}
+#modal_complexe .onglet_complexe_1:hover{
+	background-color: white;
+	color: black;
+	cursor: pointer;
+}
+#modal_complexe .onglet_complexe_1{
+	background-color: #008080;
+	color: rgb(235,239,243);
+	margin: 0px;
+}
+.onglet_complexe_1 p{
+	margin: 0px;
+}
+.hr3{
+	margin: 0px 0px;
+	border: solid 1px rgb(220,225,230);
+}
+@media all and (min-device-width: 480px){
+	.calendrier{
+	margin: 5px;
+	display: flex;
+	overflow-x: scroll;
+	background-color: rgba(241,243,245,0.7);
+	color: white;
+	}
+	.cont-creneaux{
+		min-width: 90px;
+		max-width: 90px;
+		font-size: 10px;
+		padding: 5px;
+		border-right: solid 1px grey;
+	}
+	.cont-creneaux div{
+		margin: 2px;
+		margin-right: 1px;
+		margin-left: 1px;
+	}
+	.cont-creneaux label{
+		width: 100%;
+		border-radius: 2px;
+		cursor: pointer;
+		padding: 1px 2px;
+		background-color: rgb(66,133,244);
+	}
+	.cont-creneaux input[type="checkbox"]:checked + label {
+    background: brown;
+	}
+	#titre_corps{
+		padding: 10px;
+	}
+	.to_hide{
+		display: none;
+	}
+	.cont-creneaux *{
+		font-size: 11px;
+	}
+	.filtre{
+		margin: 1px 20px;
+	}
+	.onglet-contenu{
+		font-size: 12px;
+		line-height: 12px;
+		padding: 4px;
+	}
+	.onglet-contenu *{
+		font-size: 12px;
+		line-height: 12px;
+	}
+	.cont-creneaux p{
+		color: black;
+	}
+	#btn_complexe, #btn_dpt{
+		padding: 8px 10px;
+	}
+	.cont{
+		color: white;
+		padding: 20px;
+		padding-top: 30px;
+	}
+	h2{
+		color: white;
+	}
+}
+@media all and (max-device-width: 480px){
+}

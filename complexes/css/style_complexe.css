@@ -1,0 +1,108 @@
+#header1{
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	background-color: #2BA14B;
+	color: white;
+}
+#page{
+	display: flex;
+}
+#volet{
+	height: 70px;
+	background-color: #2BA14B;
+	border-top: solid 1px white;
+}
+#volet_menu{
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+#volet_menu >div{
+	flex: 1;
+}
+#volet_nom{
+	width: 10%;
+	text-align: center;
+	display: flex;
+	align-items: center;
+}
+#volet_deco{
+	width: 10%;
+	text-align: center;
+	display: flex;
+	align-items: center;
+}
+#volet > div >div{
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+#volet > div *{
+	height: 100%;
+	text-align: center;
+	display: flex;
+	align-items: center;
+}
+#volet a {
+	width: 100%;
+	text-align: center;
+}
+#volet a p {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+#volet > div >div:hover{
+	cursor: pointer;
+	background-color: rgba(0,0,0,0.3);
+	height: 100%;
+}
+#volet  a{
+	color: white;
+}
+#volet  a:hover{
+	color: rgb(70,73,76);
+	text-decoration: none;
+}
+#volet p{
+	margin: 0px;
+	padding: 0px;
+	font-size: 16px;
+	color: white;
+}
+#volet .glyphicon{
+	padding-right: 4px;
+	padding-left: 4px;
+}
+#volet2{
+	background-color: #F1F3F5;
+}
+#corps{
+	padding-bottom: 0px;
+	padding: 10px;
+}
+#post_planning{
+	overflow-x: scroll;
+}
+.tableau{
+	margin: auto;
+	overflow-x: scroll;
+}
+.has-feedback{
+	background-color: #E9EBEE;
+	padding: 10px;
+}
+table {
+    border-collapse: collapse;
+    line-height: 1;
+	overflow-x: scroll;
+}
+.hr1{
+	border: solid 1px rgb(110,115,120);
+	margin-right: 12%;
+	margin-left: 12%;
+	width: 76%;
+}

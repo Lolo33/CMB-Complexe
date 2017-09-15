@@ -1,0 +1,158 @@
+.titre-menu {
+    text-align: center;
+    color: darkslateblue;
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 14px;
+    margin-top: 14px;
+}
+
+.nav-tool {
+    border-right: 1px solid lightgrey;
+    position: fixed;
+    bottom:0;
+    top:0;
+    width: 300px;
+    background: #f5f5f5;
+    overflow: auto;
+}
+.cont-tool {
+    padding: 0;
+    margin-left: 300px;
+    margin-bottom: 40px;
+}
+
+.sous-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.nav > li > a{
+    padding: 4px 6px;
+}
+.sous-menu-item, .sous-menu-item-active {
+    cursor: pointer;
+}
+.sous-menu a, .sous-menu a:hover, .sous-menu a:focus {
+    color: black;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+}
+.sous-menu-item:hover, .sous-menu-item-active {
+    background: lightblue;
+}
+
+.no-bg {
+    background: white;
+}
+td a[data-descr]:hover:after {
+    content: attr(data-descr);
+    position: absolute;
+    width: 200px;
+    margin-left: 20px;
+    border: 1px #aaaaaa solid;
+    border-radius: 10px;
+    padding: 12px;
+    color: white;
+    font-size: 14px;
+    z-index: 1;
+    background: darkslategrey;
+}
+#contenu-doc {
+    width: 100%;
+    padding: 1px 30px;
+    background-color: rgb(200,205,210);
+}
+.titre-section {
+    color: darkslateblue;
+    text-align: center;
+    text-decoration: underline;
+}
+.prop-obj-type {
+    color: darkslateblue;
+}
+
+section {
+    margin: 20px;
+    width: 80%;
+    background-color: white;
+    padding: 15px;
+}
+.container-fluid{
+    width: 100%;
+}
+/*
+    Conteneur de la methode HTTP
+*/
+.methode-http {
+    padding: 2px;
+    border: 1px solid lightslategrey;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+}
+.methode-get {
+    background: forestgreen;
+}
+.methode-post {
+    background: orangered;
+}
+.methode-delete {
+    background: darkred;
+}
+.methode-put {
+    background: steelblue;
+}
+.methode-patch {
+    background: darkslateblue;
+}
+.method {
+    margin: 0;
+    padding: 1px;
+}
+.url {
+    padding: 2px;
+    width: 100%;
+    border: 1px solid lightslategrey;
+    background: lightgrey;
+    border-radius: 5px;
+}
+h4{
+    font-size: 18px;
+    text-align: center
+}
+/*
+    Styles de code
+*/
+.code {
+    background: darkslategrey;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    white-space: pre;
+}
+
+
+/*
+    ***** INDEX *****
+ */
+.nav-titre {
+    background: lightslategray;
+    text-align: center;
+    color: white;
+    padding: 10px 0;
+    border: 1px solid lightslategrey;
+    border-radius: 5px;
+    margin-bottom: 0;
+}
+
+.form-conteneur, .conteneur-light {
+    background: #f5f5f5;
+    padding: 10px;
+}
+.btn-zone {
+    text-align:right;
+    margin-top: 10px;
+}

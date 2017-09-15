@@ -1,0 +1,418 @@
+@media all and (max-device-width: 480px){
+	#page{
+		color: white;
+	}
+	#mes_events{
+	}
+	#mes_events button{
+		margin: auto;
+	}
+
+	#home_dpt{
+		padding: 1px;
+		margin-top: 20px;
+	}
+	.lien_1{
+		padding: 1px;
+		margin: 1px;
+		line-height: 13px;
+		font-size: 11px;
+		color: white;
+	}
+	.hr1{
+		margin-left: 10%;
+		margin-right: 10%;
+		margin-top: 25px;
+		margin-bottom: 25px;
+		border: 1px solid white;
+	}
+	.btn{
+		text-transform: none;
+		padding: 3px;
+		line-height: normal;
+		white-space: unset;
+	}
+	.annonce{
+		margin-bottom: 10px;
+		text-transform: uppercase;
+		font-weight: 500;
+	}
+	.btn-img{
+		margin-top: 10px;
+		margin-bottom: 25px;
+	}
+	#recap_dpt p{
+		margin-top: 20px;
+		margin-bottom: 5px;
+		font-size: 12px;
+	}
+	#recap_dpt{
+		margin-bottom: 5px;
+	}
+	#recap_dpt .btn{
+		margin-top: 10px;
+		min-width: 50px;
+	}
+	.item {
+		margin-bottom: 20px;
+	}
+	.item img{
+		width: 80%;
+		margin-right: 10%;
+		margin-left: 10%;
+
+	}
+	.recap_complexe .img{
+		margin: auto;
+		max-width: 120px; 
+		max-height: 35px;
+	}
+	.carousel-indicators{
+		bottom: 0px;
+	}
+	h2{
+		font-size: 15px;
+		text-decoration: underline;
+		line-height: 20px;
+		margin-bottom: 15px;
+	}
+	.modal{
+		color: black;
+	}
+
+	.scrollable-menu{
+	    height: auto;
+	    max-height: 220px;
+	    overflow: scroll;
+	}
+	.btn_dpt_lien{
+		background-color: rgb(220,220,220);
+		color: white;
+	}
+	.btn_dpt_lien:hover{
+		color: black;
+	}
+
+	.btn_dpt{
+		margin: 1px;
+		padding: 1px;
+	}
+	.btn_dpt:hover{
+		cursor: pointer;
+		background-color: rgb(220,220,220);
+	}
+	.recap_complexe{
+		padding: 4px;
+		padding-left: 0px;
+		padding-right: 0px;
+		color: white;
+		font-weight: 500;
+	}
+
+	.recap_complexe:hover{
+		cursor: pointer;
+		background-color: rgb(215,215,215);
+		color: black;
+	}
+	.recap_complexe div{
+		flex: 1;
+	}
+	.modal-dialog{
+		margin: 5px;
+	}
+	.modal-content{
+		background-color: #008080;
+	}
+	.modal-header, .modal-body, .modal-footer{
+		padding-right: 2px;
+		padding-left: 2px;
+		border-radius: 4px;
+	}
+	.modal-header{
+		margin-top: 3px;
+	}
+	.modal-header h3{
+		font-weight: 500;
+		font-size: 14px;
+		color: rgb(240,240,240);
+	}
+	#myModal_complexe .modal-body{
+		padding: 5px;
+	}
+	#myModal_events .modal-header{
+	}
+	.close1{
+		font-size: 12px;
+		text-align: right;
+		background-color: rgba(0,0,0,0);
+		line-height: 1;
+		color: white;
+		border: 0;
+
+	}
+	.recap_event a{
+		background-color: rgb(66,133,244);
+		color: black;
+	}
+	.recap_event *:hover{
+		color: black;
+		background-color: rgb(215,215,215);
+		text-decoration: none;
+	}
+	.recap_event:hover{
+		color: black;
+		background-color: rgb(215,215,215);
+		text-decoration: none;
+	}
+	.recap_event{
+		color: black;
+		background-color: white;
+		text-decoration: none;
+		border-radius: 4px;
+	}
+
+	.recap_event .container-fluid{
+		padding: 3px;
+	}
+	.recap_event_info{
+		flex: 1;
+		text-align: center;
+		justify-content: center;
+		align-self: center;
+	}
+	#filtre{
+		display: flex;
+		flex-direction: column;
+		font-size: 11px;
+		line-height: 11px;
+		padding: 5px;
+		background-color: white;
+	}
+	#filtre label:hover{
+		cursor: pointer;
+		background-color: rgb(215,215,215);
+	}
+	.checkbox_complexe{
+		margin-top: 5px;
+		margin: 0px;
+		padding: 1px;
+	}
+	.checkbox_complexe *{
+		margin: 0px;
+		padding: 0px;
+	}
+	#btn-filtre-envoi{
+		margin: 10px;
+	}
+	.heure{
+		font-size: 8px;
+	}
+}
+
+@media all and (min-device-width: 480px){
+	#page{
+		color: white;
+	}
+	#mes_events{
+	}
+	#mes_events button{
+		margin: auto;
+	}
+
+	#home_dpt{
+		padding: 5px;
+		margin-top: 25px;
+	}
+	.lien_1{
+		padding: 4px;
+		margin: 4px;
+		line-height: 17px;
+		font-size: 13px;
+		color: white;
+	}
+	.hr1{
+		margin-left: 10%;
+		margin-right: 10%;
+		margin-top: 35px;
+		margin-bottom: 35px;
+		border: 1px solid white;
+	}
+	.btn{
+		text-transform: none;
+		padding: 7px;
+		line-height: normal;
+		white-space: unset;
+	}
+	.annonce{
+		margin-bottom: 15px;
+		text-transform: uppercase;
+		font-weight: 500;
+	}
+	.btn-img{
+		margin-top: 15px;
+		margin-bottom: 35px;
+	}
+	#recap_dpt p{
+		margin-top: 30px;
+		margin-bottom: 10px;
+		font-size: 14px;
+	}
+	#recap_dpt{
+		margin-bottom: 10px;
+	}
+	#recap_dpt .btn{
+		margin-top: 15px;
+		min-width: 70px;
+	}
+	.item {
+		margin-bottom: 25px;
+	}
+	.item img{
+		width: 80%;
+		margin-right: 10%;
+		margin-left: 10%;
+
+	}
+	.recap_complexe .img{
+		margin: auto;
+		max-width: 160px; 
+		max-height: 50px;
+	}
+	.carousel-indicators{
+		bottom: 0px;
+	}
+	h2{
+		font-size: 18px;
+		text-decoration: underline;
+		line-height: 25px;
+		margin-bottom: 20px;
+	}
+	.modal{
+		color: black;
+	}
+
+	.scrollable-menu{
+	    height: auto;
+	    max-height: 550px;
+	    overflow-y: scroll;
+	}
+	.btn_dpt_lien{
+		background-color: rgb(220,220,220);
+		color: white;
+	}
+	.btn_dpt_lien:hover{
+		color: black;
+	}
+
+	.btn_dpt{
+		margin: 4px;
+		padding: 4px;
+	}
+	.btn_dpt:hover{
+		cursor: pointer;
+		background-color: rgb(220,220,220);
+	}
+	.recap_complexe{
+		padding: 8px;
+		padding-left: 0px;
+		padding-right: 0px;
+		color: white;
+		font-weight: 500;
+	}
+
+	.recap_complexe:hover{
+		cursor: pointer;
+		background-color: rgb(215,215,215);
+		color: black;
+	}
+	.recap_complexe div{
+		flex: 1;
+	}
+	.modal-content{
+		background-color: #008080;
+	}
+	.modal-header, .modal-body, .modal-footer{
+		padding-right: 7px;
+		padding-left: 7px;
+		border-radius: 8px;
+	}
+	.modal-header{
+		margin-top: 6px;
+	}
+	.modal-header h3{
+		font-weight: 500;
+		font-size: 17px;
+		color: rgb(240,240,240);
+	}
+	#myModal_complexe .modal-body{
+		padding: 10px;
+	}
+	#myModal_events .modal-header{
+	}
+	.close1{
+		font-size: 14px;
+		text-align: right;
+		background-color: rgba(0,0,0,0);
+		line-height: 1;
+		color: white;
+		border: 0;
+
+	}
+	.recap_event a{
+		background-color: rgb(66,133,244);
+		color: black;
+	}
+	.recap_event *:hover{
+		color: black;
+		background-color: rgb(215,215,215);
+		text-decoration: none;
+	}
+	.recap_event:hover{
+		color: black;
+		background-color: rgb(215,215,215);
+		text-decoration: none;
+	}
+	.recap_event{
+		color: black;
+		background-color: white;
+		text-decoration: none;
+		border-radius: 6px;
+	}
+
+	.recap_event .container-fluid{
+		padding: 5px;
+	}
+	.recap_event_info{
+		flex: 1;
+		text-align: center;
+		justify-content: center;
+		align-self: center;
+	}
+	#filtre{
+		display: flex;
+		flex-direction: column;
+		font-size: 14px;
+		line-height: 14px;
+		padding: 8px;
+		background-color: white;
+	}
+	#filtre label:hover{
+		cursor: pointer;
+		background-color: rgb(215,215,215);
+	}
+	.checkbox_complexe{
+		margin-top: 8px;
+		margin: 0px;
+		padding: 4px;
+	}
+	.checkbox_complexe *{
+		margin: 0px;
+		padding: 0px;
+	}
+	#btn-filtre-envoi{
+		margin: 15px;
+	}
+	.heure{
+		font-size: 12px;
+	}
+}

@@ -1,0 +1,19 @@
+#corps{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+#corps div{
+	display: flex;
+	margin: 15px;
+}
+#corps div a{
+	margin: auto;
+	border-radius: 15px;
+}
+#btn_departement{
+	border: solid 1px grey;
+	border-radius: 5px;
+	padding: 5px;
+	background-color: #ececec;
+}

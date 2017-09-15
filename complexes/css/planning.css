@@ -1,0 +1,143 @@
+
+#div_action{
+	padding-left: 20px;
+}
+.modal-body{
+	padding-top: 10px;
+}
+#select_modal_semaine{
+}
+.creneau_resa{
+	font-weight: 100;
+	background-color: rgb(66,133,244);
+	color: white;
+	margin: 0px;
+	padding: 0px;
+}
+.creneau_resa:hover{
+	background-color: rgb(49,95,183);
+}
+.creneau_ferme{
+	background-color: #1a1a1a;
+	color: rgb(241,243,245);
+	font-weight: 500;
+	margin: 0px;
+	padding: 0px;
+}
+.creneau_ferme:hover{
+	background-color: #0a0a0a;
+}
+.creneau_ouvert{
+	font-weight: 100;
+	background-color: white;
+	color: rgb(60,70,80);
+	margin: 0px;
+	padding: 0px;
+}
+.creneau_ouvert:hover{
+	background-color: #efefef;
+}
+.heure{
+	margin: 0px;
+	padding: 0px;
+	vertical-align: top;
+	font-size: 13px;
+	line-height: 0.8;
+}
+td{
+	border-bottom: solid 1px #a9a9a9;
+	border-right: solid 1px #a9a9a9;
+	border-left: solid 1px #a9a9a9;
+	cursor: pointer;
+	text-align: left;
+	width: 300px;
+}
+tr{
+	height: 28px;
+}
+th{
+	text-align: center;
+	border: solid 1px #a9a9a9;
+	color: rgb(29,33,41);
+	font-weight: 500;
+}
+.td_terrain{
+	text-align: center;
+	border: solid 1px #a9a9a9;
+	background-color: rgb(211,220,227);
+	color: white;
+}
+.btn2{
+	padding: 2px 3px;
+}
+.td_plage{
+	display: flex;
+	flex-direction: column;
+}
+.titre_section_form{
+	margin: 0px;
+	text-decoration: underline;
+	text-align: center;
+}
+#formulaire_tarifs{
+	background-color: white;
+	margin-right: 5%;
+	margin-left: 5%;
+	width: 90%;
+	border: solid 1px rgb(200,203,206);
+	padding: 6px;
+}
+.volet2_tarifs{
+	width: 15%;
+	min-width: 300px;
+	
+}
+#formulaire_tarifs label{
+	margin: 0px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+#formulaire_tarifs label:hover{
+	cursor: pointer;
+	background-color: rgb(180,185,190);
+}
+.btn-form{
+	padding: 2px 3px;
+	margin-top: 10px;
+}
+.heure_prix{
+	color: white;
+	font-weight: 500;
+}
+.prix{
+	color: white;
+	font-weight: 500;
+}
+/*vert*/
+.td_1{
+	background-color: #28b463 ;
+}
+.td_2{
+	background-color: #1d8348  ;
+}
+/*bleu*/
+.td_3{
+	background-color: #2e86c1  ;
+}
+.td_4{
+	background-color:  #21618c ;
+}
+/*orange*/
+.td_5{
+	background-color: #d4ac0d ;
+}
+.td_6{
+	background-color:  #9a7d0a ;
+}
+/*rouge*/
+.td_7{
+	background-color: #873600 ;
+}

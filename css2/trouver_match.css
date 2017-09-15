@@ -1,0 +1,299 @@
+
+
+
+/* *****************************			petit et grand écran  					*********************************** */
+
+#page{
+	display: flex;
+	flex-direction: column;
+}
+
+#nom_complexe:hover{
+	cursor: pointer;
+}
+.btn_complexe:hover{
+	background-color: rgb(100,100,100);
+}
+#liste_dpt{
+	width: 80%;
+	margin-left: 10%;
+}
+
+.recap_event{
+	margin: 1px;
+	padding: 1px;
+	background-color: rgba(66,133,244,1);
+	border-radius: 5px;
+}
+.recap_event p{
+	margin: 0px;
+	padding: 1px;
+}
+.recap_event a{
+	margin: 0px;
+	padding: 0px;
+}
+hr{
+	clear: both;
+	width: 100%;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+#myModal{
+	color: black;
+}
+#myModal *{
+	color: black;
+}
+.tournoi{
+	padding: 0px;
+}
+.tournoi *{
+	padding: 1px;
+	margin: 0px;
+}
+.date_heure{
+	display: flex;
+}
+/* *****************************			grand écran  					*********************************** */
+@media screen and (min-width: 750px) {
+	#page2{
+		width: 70%;
+		max-width: 600px;
+		min-height: 400px;
+		margin: auto;
+		padding: 10px;
+		border-radius: 10px;
+		background-color: rgba(200,200,200,0.85);
+		border: solid 1px white;
+		display: block;
+		margin-top: 30px;
+		margin-bottom: 10px;
+	}
+
+	.btn_complexe{
+		width: 500px;
+		margin: auto;
+		margin-bottom: 1px;
+		padding: 1px;
+		display: flex;
+		justify-content: space-between;
+		background-color: rgb(75,75,75);
+	}
+	#nom_complexe{
+		display: flex;
+		justify-content: space-between;
+		padding: 0px;
+		width: 500px;
+		min-width: 250px;
+		max-width: 500px;
+		padding: 5px;
+		margin: auto;
+
+	}
+	#nom_complexe img{
+		max-height: 60px;
+		max-width: 100px;
+
+	}
+	#nom_complexe *{
+		margin: auto;
+		padding: 1%;
+	}
+	#myModalLabel{
+		margin-bottom: 25px;
+	}
+	.modal-content{
+		height: 550px;
+	}
+	.scrollable-menu2{
+	    height: auto;
+	    max-height: 350px;
+	    overflow: scroll;
+	}
+	.btn_complexe_modal{
+		width: 95%;
+		margin: auto;
+		margin-bottom: 1px;
+		padding: 1px;
+		display: flex;
+		justify-content: space-between;
+		background-color: rgb(75,75,75);
+	}
+	.recap_event hr{
+		border-color: white;
+		width: auto;
+		margin-right: 15%;
+		margin-left: 15%;
+	}
+
+
+}
+
+
+
+/* ********************************************** 			MOBILE			 ************************************************* */
+
+@media screen and (max-width: 750px) {
+	#page2{
+		width: 90%;
+		min-height: 200px;
+		margin: auto;
+		padding: 5px;
+		border-radius: 10px;
+		background-color: rgba(200,200,200,0.85);
+		border: solid 1px white;
+		display: block;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+	.btn_complexe{
+		margin: auto;
+		margin-bottom: 1px;
+		padding: 1px;
+		display: flex;
+		justify-content: space-between;
+		background-color: rgb(75,75,75);
+	}
+	.btn_complexe_modal{
+		width: 95%;
+		margin: auto;
+		margin-bottom: 1px;
+		padding: 1px;
+		display: flex;
+		justify-content: space-between;
+		background-color: rgb(75,75,75);
+	}
+	#nom_complexe{
+		display: flex;
+		justify-content: space-between;
+		padding: 0px;
+		width: 95%;
+		margin: auto;
+	}
+	#nom_complexe *{
+		margin: auto;
+		padding: 1%;
+		font-size: 9px;
+		word-wrap: break-word;
+	}
+	#nom_complexe img{
+		max-height: 30px;
+		max-width: 60px;
+
+	}
+	#liste_dpt{
+		max-height: 200px;
+		padding: 5px;
+	}
+	#myModalLabel{
+		margin-bottom: 10px;
+	}
+	.modal-content{
+		min-height: 300px;
+	}
+	.scrollable-menu2{
+	    height: auto;
+	    max-height: 220px;
+	    overflow: scroll;
+	}
+	.modal-body{
+		padding: 5px;
+		padding-bottom: 15px;
+	}
+	.recap_event_logo{
+		margin: auto;
+		max-height: 20px;
+	}
+	.date_heure{
+		padding: 1px;
+	}
+	.date_heure *{
+		margin: 0px;
+		padding: 0px;
+		text-align: left;
+		font-size: 11px;
+		line-height: 11px;
+	}
+	.heure{
+		margin: 0px;
+		padding: 0px;
+		font-size: 9px;
+		line-height: 9px;
+		font-weight: normal;
+	}
+	.recap_event hr{
+		width: auto;
+		margin-right: 15%;
+		margin-left: 15%;
+	}
+}
+
+
+
+
+/* *****************************			A trier  					*********************************** */
+
+.index{
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+}
+body{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+body *{
+	color: white;
+	text-align: center;
+}
+.div_input{
+	color: white;
+	text-align: center;
+	justify-content: center;
+	vertical-align: center;
+	padding: 5px;
+}
+.div_input_div{
+	margin: auto;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	vertical-align: center;
+}
+.div_input2{
+	color: white;
+}
+textarea {
+	color: black;
+}
+#input_area{
+	color: black;
+}
+.btn_dpt:hover{
+	cursor: pointer;
+	background-color: rgba(230,230,230,0.85);
+}
+.btn_dpt{
+	border-radius: 2px;
+	width: 100%;
+}
+.scrollable-menu{
+    height: auto;
+    max-height: 250px;
+    overflow-x: scroll;
+}
+
+.scrollable-menu label{
+	width: 100%;
+	margin: 0px;
+	padding: 1px;
+}
+.menu_liste *{
+	color: black;
+	text-align: left;
+}
+.menu-liste li a{
+	margin-left: 1px;
+}

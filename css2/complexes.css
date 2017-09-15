@@ -1,0 +1,23 @@
+#page{
+	background-color: rgba(235,235,235,0.85);
+}
+.un-complexe {
+    padding: 1.5%;
+    border-bottom: 1px solid lightslategrey;
+}
+a {
+    color: black;
+}
+a:hover, a:focus {
+    color: dimgray;
+}
+.recap_event{
+	margin: 5px;
+	border-radius: 3px;
+}
+.recap_event:hover{
+	background-color: rgb(215,215,215);
+}
+.recap_event *:hover{
+	background-color: rgb(215,215,215);
+}
