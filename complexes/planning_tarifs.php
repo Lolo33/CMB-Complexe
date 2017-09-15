@@ -2,13 +2,14 @@
 <?php
 	include '../conf/conf.php';
 
-	if (!isset($_SESSION["id"]) OR !isset($_SESSION['lieu_id'])){
+	if (!isset($_SESSION["id"])){
 		header("Location: ../index.php");
 	}
 	$joursem = array('dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi');
 	$lieu_id = 1;
 	$liste_aa = liste_aa();
 	$liste_terrains = liste_terrain_lieu($lieu_id);
+	$id_histo = tracerComplexe();
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +21,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Planning</title>
+        <script src="../js/jquery.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -103,7 +105,8 @@
 				</div>
 			</div>
 		</div>
-		<?php //include('footer.php') ?>
+
+		<?php include "tracer/script_bas_page.php"; ?>
 	</body>
 </html> 
 <?php

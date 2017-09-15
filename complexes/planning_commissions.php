@@ -1,7 +1,7 @@
 <?php
 	include '../conf/conf.php';
 	
-	if (!isset($_SESSION["id"]) OR !isset($_SESSION['lieu_id'])){
+	if (!isset($_SESSION["id"])){
 		header("Location: ../index.php");
 	}
 	
@@ -14,6 +14,7 @@
 			$liste_commissions_terrain_aa[$terrain_value[0]][$aa_value[0]]['liste_com'] = liste_commissions_terrain_aa($terrain_value[0], $aa_value[0]);
 		}
 	}
+    $id_histo = tracerComplexe();
 	//var_dump($liste_commissions_terrain_aa[1][2]);
 ?>
 
@@ -31,7 +32,7 @@
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
 	<meta name="author" content="FREEHTML5.CO" />
 
-
+        <script src="../js/jquery.min.js"></script>
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="favicon.ico">
 
@@ -106,7 +107,7 @@
 				</div>
 			</div>
 		</div>
-		<?php //include('footer.php') ?>
+		<?php include "tracer/script_bas_page.php"; ?>
 	</body>
 </html> 
 <?php

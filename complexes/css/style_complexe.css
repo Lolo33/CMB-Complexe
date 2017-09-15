@@ -5,6 +5,9 @@
 	background-color: #2BA14B;
 	color: white;
 }
+.liste label {
+	font-size: 12px;
+}
 #page{
 	display: flex;
 }
@@ -78,6 +81,7 @@
 	padding-left: 4px;
 }
 #volet2{
+	width: 50%;
 	background-color: #F1F3F5;
 }
 #corps{
