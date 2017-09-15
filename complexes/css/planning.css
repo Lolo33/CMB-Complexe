@@ -140,3 +140,9 @@ th{
 .td_7{
 	background-color: #873600 ;
 }
+.not_defined{
+	margin: 0px; 
+	padding: 0px; 
+	border: solid 1px black; 
+	height: 23px;
+}

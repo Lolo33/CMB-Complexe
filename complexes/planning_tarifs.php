@@ -6,9 +6,13 @@
 		header("Location: ../index.php");
 	}
 	$joursem = array('dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi');
-	$lieu_id = 1;
-	$liste_aa = liste_aa();
+	$joursem2 = array('lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi','dimanche');
+	$mois = array("janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "decembre");
+	$lieu_id = $_SESSION['complexe_id'];
 	$liste_terrains = liste_terrain_lieu($lieu_id);
+	foreach ($liste_terrains as $terrain_key => $terrain_value) {
+		$liste_tarifs_terrain[$terrain_value[0]] = liste_tarifs_terrain($terrain_value[0]);
+	}
 	$id_histo = tracerComplexe();
 ?>
 
@@ -27,30 +31,12 @@
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
 	<meta name="author" content="FREEHTML5.CO" />
 
-
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
-
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
 	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="../css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="../css/icomoon.css">
-	<!-- Simple Line Icons -->
-	<link rel="stylesheet" href="../css/simple-line-icons.css">
-	<!-- Bootstrap  -->
 	<link rel="stylesheet" href="../css/bootstrap.css">
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="css/planning.css">
 	<link rel="stylesheet" href="css/style_complexe.css">
-
-	<!-- Modernizr JS -->
-	<script src="../js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
 
 	</head>
 		<?php //include('head.php'); ?>
@@ -112,10 +98,8 @@
 <?php
 
 function entete_complexe_commission($tab_terrains){
-	global $liste_aa;
-	$db = connexionBdd();
-	$joursem = array('dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi');
-	$joursem2 = array('lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi','dimanche');
+	global $joursem;
+	global $joursem2; 
 	$colspan = count($tab_terrains);
 	?>
 		<tr class="entete_complexe_jour" style="text-align: center">
@@ -124,7 +108,7 @@ function entete_complexe_commission($tab_terrains){
 				for ($i=0; $i < 7; $i++) { 
 					?>
 						<th  colspan="<?php echo $colspan; ?>">
-							<div > <?php echo $joursem2[$i]; ?> </div>
+							<div> <?php echo $joursem2[$i]; ?> </div>
 						</th>
 					<?php
 				}
@@ -146,19 +130,19 @@ function entete_complexe_commission($tab_terrains){
 	<?php
 }                           
 function case_complexe_commission ($jour_semaine, $heure, $liste_terrains){
-	$joursem = array('dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi');
-	$mois = array("janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "decembre");
+	global $joursem;
+	global $mois;
+	global $liste_tarifs_terrain;
 	$obj_heure = DateTime::createFromFormat('H:i:s', $heure);
 	foreach ($liste_terrains as $terrain => $val) {
-		$liste_tarifs_terrain = liste_tarifs_terrain($val[0]);
-			$creneau_rempli = 0;
-				foreach ($liste_tarifs_terrain as $tarif_key => $tarif_value) {
-
-					$obj_heure_plage_debut = DateTime::createFromFormat('H:i:s', $tarif_value['tarif_heure_debut']);
-					$obj_heure_plage_fin = DateTime::createFromFormat('H:i:s', $tarif_value['tarif_heure_fin']);
-					$heure_debut_while = clone($obj_heure_plage_debut);
-					$heure_fin_while = clone($obj_heure_plage_fin);
+		$creneau_rempli = 0;
+				foreach ($liste_tarifs_terrain[$val[0]] as $tarif_key => $tarif_value) {
 					if ($tarif_value['tarif_heure_debut'] == $heure AND $tarif_value['tarif_jour'] == $jour_semaine ) {
+						$obj_heure_plage_debut = DateTime::createFromFormat('H:i:s', $tarif_value['tarif_heure_debut']);
+						$obj_heure_plage_fin = DateTime::createFromFormat('H:i:s', $tarif_value['tarif_heure_fin']);
+						$heure_debut_while = clone($obj_heure_plage_debut);
+						$heure_fin_while = clone($obj_heure_plage_fin);
+
 						$nb_demi_heure = 0;
 						while ($heure_debut_while < $heure_fin_while) {
 							$heure_debut_while->add(new DateInterval('PT30M'));
@@ -196,19 +180,24 @@ function case_complexe_commission ($jour_semaine, $heure, $liste_terrains){
 						$creneau_rempli = 1;
 						break 1;
 					}
-					elseif ($obj_heure > $obj_heure_plage_debut AND $obj_heure < $obj_heure_plage_fin AND $jour_semaine == $tarif_value['tarif_jour']){
-						// on ne fait rien car il s'agit d'une demi heure déjà comptée au sein d'une résa
-						$creneau_rempli = 1;
-						break 1;
+					else{
+						$obj_heure_plage_debut = DateTime::createFromFormat('H:i:s', $tarif_value['tarif_heure_debut']);
+						$obj_heure_plage_fin = DateTime::createFromFormat('H:i:s', $tarif_value['tarif_heure_fin']);
+						if ($obj_heure > $obj_heure_plage_debut AND $obj_heure < $obj_heure_plage_fin AND $jour_semaine == $tarif_value['tarif_jour']){
+							// on ne fait rien car il s'agit d'une demi heure déjà comptée au sein d'une résa
+							$creneau_rempli = 1;
+							break 1;
+						}
+
 					}
 				}
-			if ($creneau_rempli == 0){
-				?>
-					<td class="center" style="margin: 0px; padding: 0px; border: solid 1px black; height: 23px">
-						Non défini
-					</td>
-				<?php
-			}
+				if ($creneau_rempli == 0){
+					?>
+						<td class="center" class="not_defined">
+							Non défini
+						</td>
+					<?php
+				}
 	}
 }
 
