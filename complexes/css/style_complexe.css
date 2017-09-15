@@ -81,7 +81,7 @@
 	padding-left: 4px;
 }
 #volet2{
-	width: 50%;
+	min-width: 295px;
 	background-color: #F1F3F5;
 }
 #corps{
