@@ -5,14 +5,14 @@
 		<form method="post" action="planning_commissions_traitement.php">
 			<h3 class="center">Réaliser une modification</h3>
 			<div class="colonne">
-				<p class="titre_section_form">Apporteurs d'affaires :</p>
+				<p class="titre_section_form">Apporteurs d'affaires:</p>
 				<div class="liste">
 					<?php
 						foreach ($liste_aa as $aa_key => $aa_value) {
 							?>
 								<span>
 									<label>
-										<?php echo $aa_value['nom']; ?>
+										<?php echo $aa_value['user_nom_societe']; ?>
 										<input type="checkbox" name="aa[]" value="<?php echo $aa_value[0]; ?>">
 									</label>
 								</span>
@@ -112,7 +112,7 @@
 				</div>
 				<div class="colonne">
 					<p class="titre_section_form">Commission :</p>
-						<input type="number" name="commission" placeholder="15">
+						<input type="number" style="width: 85%;" name="commission" placeholder="15">
 						<span> % </span>
 				</div>
 				<div class="center btn-form">

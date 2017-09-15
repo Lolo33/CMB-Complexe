@@ -1,6 +1,6 @@
 
 <div id="volet2" class="volet_tarifs" style="background-color: rgb(221,225,229);">
-	<h1 class="center">Gestion des tarifs</h1>
+	<h1 class="center">Gestion des tarifs de vos terrains</h1>
 	<div id="formulaire_tarifs">
 		<form method="post" action="planning_tarifs_traitement.php">
 			<h3 class="center">Réaliser une modification</h3>
@@ -95,7 +95,7 @@
 				</div>
 				<div class="colonne">
 					<p class="titre_section_form">Prix (Heure) :</p>
-						<input type="number" name="tarif" placeholder="15">
+						<input type="number" style="width: 85%;" name="tarif" placeholder="15">
 						<span> € </span>
 				</div>
 				<div class="center btn-form">

@@ -51,9 +51,23 @@
 		<div id="page">
 			<?php //include 'volet_parametre.php'; ?>
 			<div id="corps" class="center">
-			<div id="corps" class="center">
+			<div id="corps" class="text-center center">
 				<h1>Gestion des paramètres</h1>
-				<p>Aucun paramètres à régler pour le moment</p>
+                <?php $lieu = recupLieuById($_SESSION["lieu_id"]); ?>
+				<form method="post" action="parametres_traitement.php">
+                    <input class="form-control" name="nom" placeholder="Nom du complexe" value="<?php echo $lieu["lieu_nom"]; ?>"/>
+                    <input class="form-control" name="adresseL1" placeholder="Adresse du complexe" value="<?php echo $lieu["adresse_ligne1"]; ?>"/>
+                    <input class="form-control" name="adresseL2" placeholder="Adresse du complexe (suite)" value="<?php echo $lieu["adresse_ligne2"]; ?>"/>
+                    <input class="form-control" name="cp" placeholder="Code postal" value="<?php echo $lieu["code_postal"]; ?>"/>
+                    <input class="form-control" name="ville" placeholder="Ville" value="<?php echo $lieu["ville"]; ?>"/>
+                    <input class="form-control" name="mail" placeholder="Adresse e-mail" value="<?php echo $lieu["mail"]; ?>"/>
+                    <input class="form-control" name="tel" placeholder="N° de télephone" value="<?php echo $lieu["telephone"]; ?>"/>
+
+                    <div class="form-group">
+                        <button type="reset" class="btn btn-default">Annuler</button>
+                        <button type="submit" class="btn btn-success">Valider ces changements</button>
+                    </div>
+                </form>
 			</div>
 		</div>
 		<?php //include('footer.php') ?>

@@ -6,10 +6,15 @@
  * Time: 17:36
  */
 
-$nomSite = "CmbSdk-API";
+$nomSite = "Cmb-Api";
 ?>
 
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/style.css">
 <script src="js/jquery-1.12.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<link rel="icon" type="image/png" href="img/favicon.png" />
+<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan" rel="stylesheet">
+<link rel="stylesheet" href="highlight/styles/railscasts.css">
+<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+

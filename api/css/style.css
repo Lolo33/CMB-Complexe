@@ -1,6 +1,68 @@
+/**
+    ***** ANIMATIONS ******
+ */
+
+#logo-spinner {
+    margin-top: 200px;
+    text-align: center;
+    color: white;
+    font-family: 'Audiowide', cursive;
+    text-shadow: 7px 7px 7px black;
+}
+
+section a {
+    font-weight: bold;
+}
+
+#cache {
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    background: mediumseagreen;
+    animation-duration: 1s;
+    animation-name: fade-in;
+}
+@keyframes fade-in{
+    from {
+        visibility: visible;
+    }
+    to {
+        visibility: hidden;
+    }
+}
+
+
+#spinner {
+    visibility: hidden;
+    animation-duration: 1s;
+    animation-name: slidein;
+}
+@keyframes slidein{
+    from {
+        top: 0;
+        visibility: visible;
+    }
+    5% {
+        top: 50%;
+    }
+    to {
+        visibility: hidden;
+    }
+}
+
+
+.espace-top {
+    margin-top: 20px;
+}
+.espace-bot {
+    margin-bottom: 20px;
+}
+
 .titre-menu {
     text-align: center;
-    color: darkslateblue;
+    color: #22843d;
     border-bottom: 1px solid lightgrey;
     padding-bottom: 14px;
     margin-top: 14px;
@@ -11,14 +73,17 @@
     position: fixed;
     bottom:0;
     top:0;
-    width: 300px;
+    width: 20%;
     background: #f5f5f5;
     overflow: auto;
+    z-index: 2;
 }
 .cont-tool {
-    padding: 0;
-    margin-left: 300px;
-    margin-bottom: 40px;
+    width: 80%;
+    background-color: white;
+    min-height: 80%;
+    margin-left: 20%;
+    padding:0;
 }
 
 .sous-menu {
@@ -34,13 +99,14 @@
 }
 .sous-menu a, .sous-menu a:hover, .sous-menu a:focus {
     color: black;
+    font-style: oblique;
     text-decoration: none;
     display: block;
     width: 100%;
-    padding: 10px 20px;
+    padding: 5px 20px;
 }
 .sous-menu-item:hover, .sous-menu-item-active {
-    background: lightblue;
+    background: #c3e5cc;
 }
 
 .no-bg {
@@ -61,11 +127,10 @@ td a[data-descr]:hover:after {
 }
 #contenu-doc {
     width: 100%;
-    padding: 1px 30px;
-    background-color: rgb(200,205,210);
 }
 .titre-section {
-    color: darkslateblue;
+    color: darkslategrey;
+    margin-bottom: 30px;
     text-align: center;
     text-decoration: underline;
 }
@@ -74,24 +139,77 @@ td a[data-descr]:hover:after {
 }
 
 section {
-    margin: 20px;
-    width: 80%;
-    background-color: white;
-    padding: 15px;
+    margin: 0;
+    width: 100%;
+    padding: 3% 10% 5%;
+}
+#structure, #recup-one, #delete, #acces, #requetes {
+    background-color: #d0e8d7;
+}
+#choix {
+    position: fixed;
+    text-align: center;
+    background: mediumseagreen;
+    top:0;
+    bottom:0;
+}
+.page-choix {
+    margin-top: 10%;
+}
+.page-choix a {
+    background: darkslategrey;
+    color: whitesmoke;
+    font-size: 30px;
+    font-family: 'Baloo Bhaijaan', cursive;
+}
+.page-choix a:hover {
+    background: white;
+    text-decoration: none;
+    color: darkslategrey;
+}
+.lien-choix {
+    border-radius: 5px;
+    padding: 5% 0;
+    border: 1px solid white;
+    display: inline-block;
+    width: 60%;
+    margin: auto;
+}
+.section-doc {
+    margin-top: 50px;
+}
+.requete-description {
+    margin-bottom: 20px;
+}
+.obj-description a, .requete-description a {
+    color: #2BA14B;
+}
+.obj-description a:hover, .obj-description a:focus, .requete-description a:hover, .requete-description a:focus {
+    text-decoration: none;
+    color: #22843d;
 }
 .container-fluid{
     width: 100%;
+    margin:0;
+}
+.pager--not-link {
+    width: 200px; margin-right: 10px;
 }
 /*
     Conteneur de la methode HTTP
 */
-.methode-http {
-    padding: 2px;
+.url, .methode-http {
     border: 1px solid lightslategrey;
+    padding: 7px;
     width: 100%;
-    text-align: center;
     border-radius: 5px;
+}
+.methode-http {
+    text-align: center;
     color: white;
+}
+.url {
+    background: #f5f5f5;
 }
 .methode-get {
     background: forestgreen;
@@ -109,16 +227,10 @@ section {
     background: darkslateblue;
 }
 .method {
-    margin: 0;
+    margin: 0 0 20px;
     padding: 1px;
 }
-.url {
-    padding: 2px;
-    width: 100%;
-    border: 1px solid lightslategrey;
-    background: lightgrey;
-    border-radius: 5px;
-}
+
 h4{
     font-size: 18px;
     text-align: center
@@ -127,30 +239,136 @@ h4{
     Styles de code
 */
 .code {
+    max-height: 670px;
+    overflow: auto;
+}
+.select-langage {
+    margin: 0;
+    white-space: normal;
+}
+.tab-code {
     background: darkslategrey;
+}
+.code-select {
+    border-left: 1px solid lightslategrey;
+    border-right: 1px solid lightslategrey;
+    border-top: 1px solid lightslategrey;
+    background: grey;
+    text-align: center;
+    color: darkslateblue;
+ }
+.code-select a {
     color: white;
-    border-radius: 5px;
-    padding: 5px;
-    white-space: pre;
+}
+.code-select a:hover {
+    color: black;
+}
+.example {
+    font-weight: bold;
+    font-style: italic;
 }
 
 
 /*
     ***** INDEX *****
  */
+
+.liens-accueil {
+    border: 2px dashed lightslategrey;
+    border-radius: 10px;
+    padding: 30px 0;
+}
+.liens-accueil a {
+    text-decoration: none;
+    font-family: 'Baloo Bhaijaan', cursive;
+    color: darkslategrey;
+    font-size: 20px;
+}
+.liens-accueil .deco {
+    color: indianred;
+}
+.liens-accueil .deco:hover, .liens-accueil .deco:focus {
+    color: red;
+}
+.liens-accueil a:hover, .liens-accueil a:focus {
+    color: lightslategrey;
+}
+.liens-accueil-new-line {
+    margin-top: 30px;
+}
+.desactive {
+    display: none;
+    background: grey;
+}
 .nav-titre {
-    background: lightslategray;
+    background: #22843d;
     text-align: center;
     color: white;
     padding: 10px 0;
-    border: 1px solid lightslategrey;
-    border-radius: 5px;
+
     margin-bottom: 0;
 }
+.img-index {
+    margin-bottom: 10px;
+}
 
-.form-conteneur, .conteneur-light {
+/**
+    ***** TABLEAU DE BORD *****
+ */
+.titre-info-api, .info-api {
+    display: inline-block;
+}
+.info-api {
+    text-align: right;
+    font-family: "Calibri";
+}
+.new-line-info-api {
+    margin: 4px 20px;
+}
+.titre-info-api {
+    width: 200px;
+}
+.titre-page {
+    text-align: left;
+    color: darkslateblue;
+}
+.titre-page:before {
+    content: "~ ";
+}
+
+.margin-gerer {
+    margin: 0 10% 10px;
+}
+.titre-gerer {
+    font-size: 20px;
+    text-align: left;
+    color: darkslategrey;
+    margin: 0 10% 10px;
+}
+#input-api-key {
+    width: 300px;
+}
+/**
+    ***** INSCRIPTION / FORMULAIRES *****
+ */
+.form-conteneur {
     background: #f5f5f5;
+}
+.form-conteneur legend {
+    border-color: darkslategrey;
+    padding: 5px 0;
+}
+.form-conteneur, .conteneur-light {
     padding: 10px;
+}
+.conteneur-light {
+    padding: 15px;
+    width: 80%;
+    margin: auto;
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(102,103,112,1);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(102,103,112,1);
+    box-shadow: 1px 1px 5px 0px rgba(102,103,112,1);
+    border-radius: 1px;
 }
 .btn-zone {
     text-align:right;
