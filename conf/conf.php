@@ -20,7 +20,7 @@ function tracerComplexe(){
 
    $req_ajout->bindValue(":id", $id_histo, PDO::PARAM_INT);
 
-   $req_ajout->bindValue(":idcomplexe", $_SESSION["lieu_id"], PDO::PARAM_INT);
+   $req_ajout->bindValue(":idcomplexe", $_SESSION["complexe_id"], PDO::PARAM_INT);
 
    $req_ajout->bindValue(":url", $_SERVER["REQUEST_URI"], PDO::PARAM_STR);
 

@@ -1,10 +1,10 @@
 <?php
 
 function connexionBdd(){
-    $hote = "db695868253.db.1and1.com";
+    $hote = "localhost";
     $db = "db695868253";
-    $user = "dbo695868253";
-    $pass = "Matemaker33!";
+    $user = "root";
+    $pass = "";
     try {
         $bdd = new PDO('mysql:host='.$hote.';dbname='.$db.';charset=utf8', $user, $pass);
         $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
