@@ -32,6 +32,13 @@ function tracerComplexe(){
 
 }
 
+function activeMenuIfContain($chaine){
+    $url = $_SERVER["REQUEST_URI"];
+    if (stripos($url, $chaine))
+        echo 'class="active"';
+    else
+        echo "";
+}
 /* ----------------------------------------------------						Fonctions générales					 ------------------------------------- */
 
 function sanitize($input) {
@@ -280,6 +287,13 @@ function recupComplexeByID($complexe_id){
 	return $req->fetch();
 }
 
+function liste_resa_complexe($complexe_id){
+	$db = connexionBdd();
+	$req = $db->prepare('SELECT * FROM reservation INNER JOIN plage_horaire ON reservation.id = plage_horaire.reservation_id INNER JOIN terrain ON plage_horaire.terrain_id = terrain.id WHERE terrain.complexe_id = :complexe_id ORDER BY hor_heure_debut DESC');
+	$req->bindValue(":complexe_id", $complexe_id, PDO::PARAM_INT);
+	$req->execute();
+	return $req->fetchAll();
+}
 /* ----------------------------------------------------				Fonctions relatives aux réservations 	 ------------------------------------- */
 function recupResaById($resa_id){
 	$db = connexionBdd();

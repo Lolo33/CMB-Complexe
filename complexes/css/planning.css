@@ -18,14 +18,14 @@
 	background-color: rgb(49,95,183);
 }
 .creneau_ferme{
-	background-color: #1a1a1a;
+	background-color: #555555;
 	color: rgb(241,243,245);
 	font-weight: 500;
 	margin: 0px;
 	padding: 0px;
 }
 .creneau_ferme:hover{
-	background-color: #0a0a0a;
+	background-color: #222222;
 }
 .creneau_ouvert{
 	font-weight: 100;
@@ -35,7 +35,7 @@
 	padding: 0px;
 }
 .creneau_ouvert:hover{
-	background-color: #efefef;
+	background-color: #cccccc;
 }
 .heure{
 	margin: 0px;
@@ -58,14 +58,15 @@ tr{
 th{
 	text-align: center;
 	border: solid 1px #a9a9a9;
-	color: rgb(29,33,41);
+	color: rgb(241,243,245);
 	font-weight: 500;
 }
 .td_terrain{
 	text-align: center;
 	border: solid 1px #a9a9a9;
-	background-color: rgb(211,220,227);
-	color: white;
+	color: #eeeeee;
+	background-color: #333333;
+
 }
 .btn2{
 	padding: 2px 3px;
@@ -80,16 +81,16 @@ th{
 	text-align: center;
 }
 #formulaire_tarifs{
-	background-color: white;
+	background-color: #6BBA70;
+	color: #333333;
 	margin-right: 5%;
 	margin-left: 5%;
 	width: 90%;
-	border: solid 1px rgb(200,203,206);
+	border: solid 1px #6BBA70;
 	padding: 6px;
 }
 .volet2_tarifs{
-	width: 15%;
-	min-width: 300px;
+	width: 290px;
 }
 #formulaire_tarifs label{
 	margin: 0px;
@@ -145,4 +146,92 @@ th{
 	padding: 0px; 
 	border: solid 1px black; 
 	height: 23px;
+}
+.navbar-default{
+	background-color: #203721;
+	font-size: 14px;
+
+}
+.navbar-brand {
+    padding: 0px;
+    height: auto;
+    min-height: 30px;
+    vertical-align: center;
+}
+.navbar-default .navbar-nav > li > a {
+	color: rgb(241,243,245);
+}
+.navbar-default .navbar-nav > li > a :hover{
+	color: rgb(241,243,245);
+}
+
+.navbar-nav{
+	margin: 0px;
+}
+.titre_section {
+	text-align: center;
+    font-size: 20px;
+    text-shadow: 2px 2px 3px black;
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.75);
+    box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.75);
+    background:#6BBA70;
+    background-color: rgb(66,133,244);
+    color: white;
+    padding: 5px;
+    margin: 15px;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-radius: 3px;
+}
+.effet1 {
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.75);
+    box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.75);
+    margin-bottom: 15px;
+}
+.nav > li > a{
+    padding: 15px;
+}
+.nav > li > a > .glyphicon{
+    padding: 5px;
+}
+.navbar{
+	min-height: 30px;
+}
+#datepicker{
+	font-size: 13px;
+}
+#datepicker{
+	font-size: 13px;
+}
+.btn_semaine{
+	background-color: #6BBA70;
+	color: #333333;
+	padding: 2px;
+	border-radius: 3px;
+}
+.btn_semaine:hover{
+	color: #111111;
+	padding: 2px;
+	border-radius: 3px;
+}
+#corps table{
+	color: #333333;
+}
+#corps th{
+	background-color: white;
+	color: #333333;
+}
+.navbar-default .navbar-nav > .active > a:focus{
+	background-color: #6bba70;
+	color: white;
+	opacity: 1;
+}
+.navbar-default .navbar-nav > .active > a{
+	background-color: #6bba70;
+	color: white;
+}
+.navbar-default .navbar-nav > .active > a:hover{
+	color: #dddddd;
 }
