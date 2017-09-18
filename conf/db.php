@@ -1,10 +1,6 @@
 <?php
 
 function connexionBdd(){
-    $hote = "db695868253.db.1and1.com";
-    $db = "db695868253";
-    $user = "dbo695868253";
-    $pass = "Matemaker33!";
     $hote = "localhost";
     $db = "mate_maker_api";
     $user = "root";

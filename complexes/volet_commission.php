@@ -1,9 +1,8 @@
-
-<div id="volet2" class="volet_commission" style="background-color: rgb(221,225,229);">
-	<h1 class="center">Gestion des apporteurs d'affaires</h1>
+<div id="volet-tarif" class="effet1">
+	<h3 class="center">Gestion des apporteurs d'affaires</h3>
+	<hr/>
 	<div id="formulaire_tarifs">
 		<form method="post" action="planning_commissions_traitement.php">
-			<h3 class="center">Réaliser une modification</h3>
 			<div class="colonne">
 				<p class="titre_section_form">Apporteurs d'affaires:</p>
 				<div class="liste">

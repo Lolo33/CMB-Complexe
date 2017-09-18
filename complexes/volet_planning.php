@@ -1,4 +1,6 @@
-<div id="volet2">
+<div id="volet-tarif" class="effet1">
+	<h3 class="center">Choisir votre date</h3>
+		<hr/>
 	<div class="has-feedback">
 		<form action="planning.php" method="post">
 			<input type="hidden" id="input_jour" name="jour" value="">
