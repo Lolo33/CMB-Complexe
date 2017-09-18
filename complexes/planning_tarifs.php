@@ -44,53 +44,86 @@
 		
 	</head>
 	<body>
-			<?php include 'volet.php'; ?>
-		<div id="page">
-			<?php include 'volet_tarifs.php'; ?>
-			<div id="corps" class="center">
-				<div id="post_planning">
-					<?php 
-						//$lieu_id = $_SESSION['gerant_lieu_id'];
-						$heure_min = 10;
-						$heure_max = 24.0;
-						
-					?>
-					<div class="tableau"> 
-							<table>
-								<?php 
-									entete_complexe_commission($liste_terrains);
-									//$nom_fonction($date_min, $date_max, $lieu_id, $res_nb_terrains);
-									for ($heure = $heure_min; $heure < $heure_max; $heure= $heure + 0.5) {
-										if ( intval($heure) == $heure){
-											$minutes = "00";
-										}
-										else{
-											$minutes = "30";
-										}
-										?>
-											<tr>
-												<td class="heure"><?php echo intval($heure).':'.$minutes;?></td>
-												<?php
-													for ($i=1; $i < 7; $i++) { 
+		
+		<?php include 'volet.php'; ?>
+		<div id="page_principale"  class="effet1">
+					<div>
+						<button id="aide" data-toggle="modal" data-target="#modal_aide">
+							<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+							<span>Aide</span>
+						</button>
+					</div>
+					<div class="modal fade" id="modal_aide" tabindex="-1" role="dialog">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<br/>
+									<h1 class="center titre_section">Guide d'utilsation de la page : Gestion des tarifs</h1>
+								</div>
+								<div class="modal-body center">
+									<p>Contenu</p>
+								</div>
+							</div>
+						</div>
+					</div>
+			<h1 class="titre_section">Gestion des tarifs</h1>
+			<div id="content_tarif">
+				<?php include 'volet_tarifs.php'; ?>
+				<div id="corps" class="effet1 center">
+					<div id="post_planning">
+						<?php 
+							//$lieu_id = $_SESSION['gerant_lieu_id'];
+							$heure_min = 10;
+							$heure_max = 24.0;
+							
+						?>
+						<h3 style="color: white;"">Tarifs</h3>
+						<div class="tableau">
+								<table>
+									<?php 
+										entete_complexe_commission($liste_terrains);
+										//$nom_fonction($date_min, $date_max, $lieu_id, $res_nb_terrains);
+										for ($heure = $heure_min; $heure < $heure_max; $heure= $heure + 0.5) {
+											if ( intval($heure) == $heure){
+												$minutes = "00";
+											}
+											else{
+												$minutes = "30";
+											}
+											?>
+												<tr>
+													<td class="heure"><?php echo intval($heure).':'.$minutes;?></td>
+													<?php
+														for ($i=1; $i < 7; $i++) { 
+															$datetime_string = intval($heure).':'.$minutes.':00';
+															$heure2 = intval($heure).":".$minutes.":00";
+															case_complexe_commission($jour_semaine = $i, $heure2, $liste_terrains);
+														}
+
+														// pour le dimanche
 														$datetime_string = intval($heure).':'.$minutes.':00';
 														$heure2 = intval($heure).":".$minutes.":00";
-														case_complexe_commission($jour_semaine = $i, $heure2, $liste_terrains);
-													}
-
-													// pour le dimanche
-													$datetime_string = intval($heure).':'.$minutes.':00';
-													$heure2 = intval($heure).":".$minutes.":00";
-													case_complexe_commission(0, $heure2, $liste_terrains);
-												?>
-											</tr>
-										<?php
-									} 
-								?>
-							</table>
-					</div>	
+														case_complexe_commission(0, $heure2, $liste_terrains);
+													?>
+												</tr>
+											<?php
+										} 
+									?>
+								</table>
+						</div>	
+					</div>
 				</div>
 			</div>
 		</div>
+	<!-- jQuery -->
+	<script src="../js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="../js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="../js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 		<?php include "tracer/script_bas_page.php"; ?>
 	</body>
@@ -194,7 +227,7 @@ function case_complexe_commission ($jour_semaine, $heure, $liste_terrains){
 				if ($creneau_rempli == 0){
 					?>
 						<td class="center" class="not_defined">
-							Non défini
+							---
 						</td>
 					<?php
 				}
