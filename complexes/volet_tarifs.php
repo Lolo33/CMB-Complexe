@@ -1,12 +1,11 @@
-
-<div id="volet2" class="volet_tarifs" style="background-color: rgb(221,225,229);">
-	<h1 class="center">Gestion des tarifs de vos terrains</h1>
+<div id="volet-tarif" class="effet1">
+	<h3 class="center">Modification des tarifs</h3>
+	<hr/>
 	<div id="formulaire_tarifs">
 		<form method="post" action="planning_tarifs_traitement.php">
-			<h3 class="center">Réaliser une modification</h3>
-				<div class="colonne">
-					<p class="titre_section_form">Terrains :</span>
-					<div class="liste">
+			<div class="colonne">
+				<p class="titre_section_form">Terrains :</span>
+				<div class="liste">
 					<?php
 						foreach ($liste_terrains as $terrain_key => $terrain_value) {
 							?>
@@ -19,8 +18,8 @@
 							<?php
 						}
 					?>
-					</div>
 				</div>
+			</div>
 				<div class="colonne">
 					<p class="titre_section_form">Heures :</p>
 					<div class="ligne espacer1">

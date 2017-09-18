@@ -1,3 +1,6 @@
+body{
+	color: black;
+}
 #header1{
 	width: 100%;
 	margin: 0px;
@@ -10,6 +13,7 @@
 }
 #page{
 	display: flex;
+	padding: 10px;
 }
 #volet{
 	height: 70px;
@@ -77,36 +81,112 @@
 	color: white;
 }
 #volet .glyphicon{
-	padding-right: 4px;
-	padding-left: 4px;
+	padding: 8px;
 }
 #volet2{
 	min-width: 295px;
 	background-color: #F1F3F5;
 }
+#volet2 h3{
+	color: white;
+}
 #corps{
 	padding-bottom: 0px;
-	padding: 10px;
+	padding: 5px;
+	background-color: #6BBA70;
+	background-color: #203721;
 }
 #post_planning{
-	overflow-x: scroll;
 }
 .tableau{
 	margin: auto;
-	overflow-x: scroll;
 }
 .has-feedback{
-	background-color: #E9EBEE;
+	/*background-color: #E9EBEE; */	
 	padding: 10px;
 }
 table {
     border-collapse: collapse;
     line-height: 1;
 	overflow-x: scroll;
+	background-color: white;
 }
 .hr1{
 	border: solid 1px rgb(110,115,120);
 	margin-right: 12%;
 	margin-left: 12%;
 	width: 76%;
+}
+#content_accueil{
+	margin-right: 5%;
+	margin-left: 5%;
+	min-height: 500px;
+	padding: 15px;
+	font-size: 14px;
+	background-color: #203721;
+	color: white;
+}
+.section_accueil_1{
+	border-radius: 4px;
+	border: solid 1px rgb(205,210,215);
+	background-color: #6BBA70;
+	padding: 5px;
+	margin: 10px;
+	color: black;
+}
+.sous-section-accueil{
+	border-radius: 4px;
+	border: solid 1px rgb(205,210,215);
+	background-color: white;
+	padding: 5px;
+	min-height: 100px;
+}
+#page_principale{
+	margin: 15px;
+	padding: 15px;
+	background-color: #203721;
+}
+#content_tarif{
+	margin: 15px;
+	padding: 15px;
+	background-color: #203721;
+	display: flex;
+}
+#content_tarif #corps{
+	background-color: #6BBA70;	
+}
+#volet-tarif{
+	margin-right: 15px;
+	padding: 5px;
+	background-color: #6BBA70;	
+}
+#volet-tarif h3{
+	color: white;
+}
+#aide{
+    float: right;
+    font-size: 19px;
+    color: white;
+    padding: 2px;
+    background-color: transparent;
+    border:	none;
+}
+#aide:hover{
+	font-weight: bold;
+	color: #eeeeee;
+}
+#aide span{
+    padding: 2px;
+}
+#modal_aide{
+	min-width: 0%;
+	max-width: 100%;
+	width: 90%;
+	margin-right: 5%;
+	margin-left: 5%;
+}
+#modal_aide .modal-dialog{
+	width: auto;
+}
+#modal_aide .modal-header{
 }

@@ -55,9 +55,31 @@
 	</head>
 	<body>
 		<?php include 'volet.php'; ?>
-		<div id="page">
-			<?php include 'volet_planning.php'; ?>
-			<div id="corps" class="center">
+		<div id="page_principale"  class="effet1">
+					<div>
+						<button id="aide" data-toggle="modal" data-target="#modal_aide">
+							<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+							<span>Aide</span>
+						</button>
+					</div>
+					<div class="modal fade" id="modal_aide" tabindex="-1" role="dialog">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<br/>
+									<h1 class="center titre_section">Guide d'utilsation de la page : Planning</h1>
+								</div>
+								<div class="modal-body center">
+									<p>Contenu</p>
+								</div>
+							</div>
+						</div>
+					</div>
+			<h1 class="titre_section">Planning</h1>
+			<div id="content_tarif">
+				<?php include 'volet_planning.php'; ?>
+				<div id="corps" class="center effet1">
 				<div id="post_planning" >
 					<?php
 						$format = 'Y-m-d'; 
@@ -84,6 +106,10 @@
 							$date_min	= $now1->sub(new DateInterval ('P'.$delta_jour_debut_semaine.'D'));
 						*/
 						}
+						$semaine_prec = clone($date_min);
+						$semaine_suiv = clone($date_min);
+						$semaine_prec->sub( new DateInterval('P7D'));
+						$semaine_suiv->add( new DateInterval('P7D'));
 
 						$date_max = clone($date_min);
 						$date_max->add( new DateInterval('P'.$vue.'D'));
@@ -102,6 +128,25 @@
 							$liste_terrains[$key]['plages_horaires'] = $liste_plages_horaires;
 						}
 					?>
+					<div class="ligne espacer2">
+						<div>
+							<form action="planning.php" method="post">
+								<input type="hidden" name="jour" value="<?php echo $semaine_prec->format('j-m-Y'); ?>">
+								<input type="hidden" name="vue_semaine" value="1">
+								<button class="btn_semaine" type="submit">Semaine précédente <?php echo $semaine_prec->format('j/m'); ?></button>
+							</form>
+						</div>
+						<div>
+							<p style="color: white;">Semaine</p>
+						</div>
+						<div>
+							<form action="planning.php" method="post">
+								<input type="hidden" name="vue_semaine" value="1">
+								<input type="hidden" name="jour" value="<?php echo $semaine_suiv->format('j-m-Y'); ?>">
+								<button class="btn_semaine" type="submit">Semaine précédente <?php echo $semaine_suiv->format('j/m'); ?></button>
+							</form>
+						</div>
+					</div>
 					<div class="tableau center">
 							<table>
 								<?php
@@ -316,7 +361,7 @@
 	<script src="../js/bootstrap.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script>
+<script>
 		$('.clic-radio-1').click(function () {
 			console.log("coucou");
 		    var action;
@@ -389,27 +434,28 @@
 		    $('#modal-body-resa-2').css("display", "");
 		});
 
- $(function() {$( "#datepicker" ).datepicker({
-    onSelect: function(date) {
-            $('#input_jour').attr("value", date);
-        },
-  firstDay: 1,
-  altField: "#datepicker",
-  closeText: 'Fermer',
-  prevText: 'Précédent',
-  nextText: 'Suivant',
-  currentText: 'Aujourd\'hui',
-  monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
-  monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
-  dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
-  dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
-  dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
-  weekHeader: 'Sem.',
-  showOn: "button",
-  dateFormat: 'dd-mm-yy'});
-});
- </script>
- <?php include "tracer/script_bas_page.php"; ?>
+	$(function() {$( "#datepicker" ).datepicker({
+	    onSelect: function(date) {
+	            $('#input_jour').attr("value", date);
+	        },
+	  	firstDay: 1,
+	  	altField: "#datepicker",
+	  	closeText: 'Fermer',
+	  	prevText: 'Précédent',
+	  	nextText: 'Suivant',
+	  	currentText: 'Aujourd\'hui',
+	  	monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+	  	monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+	  	dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+	  	dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
+	  	dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+	  	weekHeader: 'Sem.',
+	  	showOn: "button",
+	  	dateFormat: 'dd-mm-yy'});
+	});
+</script>
+
+	<?php include "tracer/script_bas_page.php"; ?>
 	</body>
 </html>
 	<?php
