@@ -84,10 +84,8 @@ body{
 	padding: 8px;
 }
 #volet2{
-	margin-right: 15px;
-	padding: 5px;
-	background-color: #6BBA70;
-	background-color: #203721;
+	min-width: 295px;
+	background-color: #F1F3F5;
 }
 #volet2 h3{
 	color: white;

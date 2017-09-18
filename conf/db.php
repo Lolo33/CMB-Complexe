@@ -1,16 +1,17 @@
 <?php
 
-function connexionBdd(){
-    $hote = "localhost";
-    $db = "mate_maker_api";
-    $user = "root";
-    $pass = "";
+function connexionBdd()
+{
+    $host_name  = "localhost";
+    $database   = "mate_maker_api";
+    $user_name  = "root";
+    $password   = "";
+
     try {
-        $bdd = new PDO('mysql:host='.$hote.';dbname='.$db.';charset=utf8', $user, $pass);
-        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        return $bdd;
+        $db = new PDO('mysql:host=' . $host_name . ';dbname=' . $database . ';charset=utf8', '' . $user_name . '', $password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
+        return $db;
     } catch (Exception $e) {
-        die('<b>Erreur de connexion à la Bdd :</b> <br>' . $e->getMessage());
+        die('Erreur : ' . $e->getMessage());
     }
 }
 

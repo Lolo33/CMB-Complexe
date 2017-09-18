@@ -597,18 +597,16 @@
 								<?php
 							}
 						?>
-						<form id="form_co" class="center" method="post" action="connexion_traitement.php">
-							<label class="center  ligne2">
-								<span class="center span_mod-co">Identifiant:</span>
-								<input class="input1 " type="text" name="identifiant" placeholder="Complexe_121"/>
-							</label>
-							<br/>
-							<label class="center ligne2">
-								<span class="center span_mod-co">Mot de passe:</span>
-								<input class="input1 " type="password" name="mdp" placeholder="******">
-							</label>
-							<br/>
-							<input type="submit" class="btn btn-success center  btn-valid" value="Valider"/>
+						<form id="form_co" style="width: 80%; margin:auto;" class="center" method="post" action="connexion_traitement.php">
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="identifiant" placeholder="Nom d'utilisateur"/>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="password" name="mdp" placeholder="Mot de passe">
+                            </div>
+                            <div class="form-group">
+							    <input type="submit" class="btn btn-success" style="width: 100%;" value="Valider"/>
+                            </div>
 						</form>
 					</div>
 
