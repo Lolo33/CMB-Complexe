@@ -286,7 +286,84 @@ function recupComplexeByID($complexe_id){
 	$req->execute();
 	return $req->fetch();
 }
+function horaires_complexe($complexe_id){
+	$db = connexionBdd();
+	$req1 = $db->prepare('SELECT * FROM complexe_horaire WHERE complexe_id = :complexe_id');
+	$req1 ->bindValue(':complexe_id', $complexe_id, PDO::PARAM_INT);
+	$req1 -> execute();
+	return $req1->fetchAll();
+}
+function maj_horaires($heure_debut, $heure_fin, $jours, $statut, $complexe_id){
+	$db = connexionBdd();
+	$obj_heure_plage_debut = DateTime::createFromFormat('H:i:s', $heure_debut);
+	$obj_heure_plage_fin = DateTime::createFromFormat('H:i:s', $heure_fin);
+	if ($obj_heure_plage_debut < $obj_heure_plage_fin) {
+		if ( $statut == "1"){
+			foreach ($jours as $jour_key => $jour_value) {
+				$horaires = horaires_complexe($complexe_id);
+				$test = 0;
+				foreach ($horaires as $horaire_key => $horaire_value) {
+					//echo "dernier foreach <br/>";
+					if ($horaire_value['jour_de_la_semaine'] == $jour_value){
+						//echo "test du jour ok <br/>";
+						$obj_heure_plage_debut2 = DateTime::createFromFormat('H:i:s', $horaire_value['heure_debut']);
+						$obj_heure_plage_fin2 = DateTime::createFromFormat('H:i:s', $horaire_value['heure_fin']);
+						
+						//Si chevauchement des plages cas 1 : [3-7] + [1-5] => [1-5] + [5-7]
+						if ($obj_heure_plage_debut < $obj_heure_plage_debut2 AND $obj_heure_plage_fin < $obj_heure_plage_fin2 AND $obj_heure_plage_fin > $obj_heure_plage_debut2){
+							//echo "chevauchement 1 <br/>";
+							// maj le début l'acienne plage par réduction de la période
+							//insert la nouvelle
+							$req = $db->prepare('
+								UPDATE complexe_horaire
+								SET heure_debut = :heure_debut
+								WHERE id = :id
+							');
+							$req->bindValue(":heure_debut", $heure_debut, PDO::PARAM_STR);
+							$req->bindValue(":id", $horaire_value['id'], PDO::PARAM_INT);
+							$req->execute();
+							unset($req);
+							$test = 1;
+						}
+						//Si chevauchement des plages cas 1 : [3-7] + [5-9] => [3-5] + [5-9]
+						elseif ($obj_heure_plage_debut > $obj_heure_plage_debut2 AND $obj_heure_plage_debut < $obj_heure_plage_fin2 AND $obj_heure_plage_fin > $obj_heure_plage_fin2){
+							//echo "chevauchement 2 <br/>";
+							//maj le début l'acienne plage par réduction de la période
+							//insert la nouvelle
+							$req = $db->prepare('
+								UPDATE complexe_horaire
+								SET heure_fin = :heure_fin
+								WHERE id = :id
+							');
+							$req->bindValue(":heure_fin", $heure_fin, PDO::PARAM_STR);
+							$req->bindValue(":id", $complexe_horaire['id'], PDO::PARAM_INT);
+							$req->execute();
+							unset($req);
+							$test = 1;
+						}
+					}
+				}
+				if ($test == 0){
+					$req2 = $db->prepare('
+					INSERT INTO complexe_horaire(complexe_id, heure_debut, heure_fin, jour_de_la_semaine)
+						VALUES (:complexe_id, :heure_debut, :heure_fin, :jour_de_la_semaine)
+					');
+					$req2->bindValue(":complexe_id", $complexe_id, PDO::PARAM_INT);
+					$req2->bindValue(":heure_debut", $heure_debut, PDO::PARAM_STR);
+					$req2->bindValue(":heure_fin", $heure_fin, PDO::PARAM_STR);
+					$req2->bindValue(":jour_de_la_semaine", $jour_de_la_semaine, PDO::PARAM_INT);
+					$req2->execute();
+					unset($req2);
+				}
+			}
+		}
+	}
+	else {
+		return false;
+	}
+}
 
+}
 function liste_resa_complexe($complexe_id){
 	$db = connexionBdd();
 	$req = $db->prepare('SELECT * FROM reservation INNER JOIN plage_horaire ON reservation.id = plage_horaire.reservation_id INNER JOIN terrain ON plage_horaire.terrain_id = terrain.id WHERE terrain.complexe_id = :complexe_id ORDER BY hor_heure_debut DESC');

@@ -91,7 +91,7 @@
 							$heure_max = 24.0;
 							
 						?>
-						<h3 style="color: white;"">Apports d'affaires</h3>
+						<h3 style="color: white;">Apports d'affaires</h3>
 						<div class="tableau"> 
 								<table>
 									<?php 

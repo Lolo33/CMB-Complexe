@@ -9,10 +9,7 @@
 	$joursem2 = array('lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi','dimanche');
 	$mois = array("janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "decembre");
 	$lieu_id = $_SESSION['complexe_id'];
-	$liste_terrains = liste_terrain_lieu($lieu_id);
-	foreach ($liste_terrains as $terrain_key => $terrain_value) {
-		$liste_tarifs_terrain[$terrain_value[0]] = liste_tarifs_terrain($terrain_value[0]);
-	}
+	$horaires = horaires_complexe($_SESSION['complexe_id']);
 	$id_histo = tracerComplexe();
 ?>
 
@@ -59,7 +56,7 @@
 								<div class="modal-header">
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 									<br/>
-									<h1 class="center titre_section">Guide d'utilsation de la page : Gestion des tarifs</h1>
+									<h1 class="center titre_section">Guide d'utilsation de la page : Gestion des horaires</h1>
 								</div>
 								<div class="modal-body center">
 									<p>Contenu</p>
@@ -67,22 +64,22 @@
 							</div>
 						</div>
 					</div>
-			<h1 class="titre_section">Gestion des tarifs</h1>
+			<h1 class="titre_section">Gestion des horaires</h1>
 			<div id="content_tarif">
-				<?php include 'volet_tarifs.php'; ?>
+				<?php include 'volet_horaires.php'; ?>
 				<div id="corps" class="effet1 center">
 					<div id="post_planning">
 						<?php 
 							//$lieu_id = $_SESSION['gerant_lieu_id'];
-							$heure_min = 10;
+							$heure_min = 0;
 							$heure_max = 24.0;
 							
 						?>
-						<h3 style="color: white;">Tarifs</h3>
+						<h3 style="color: white;">Horaire</h3>
 						<div class="tableau">
 								<table>
 									<?php 
-										entete_complexe_commission($liste_terrains);
+										entete_complexe_horaire();
 										//$nom_fonction($date_min, $date_max, $lieu_id, $res_nb_terrains);
 										for ($heure = $heure_min; $heure < $heure_max; $heure= $heure + 0.5) {
 											if ( intval($heure) == $heure){
@@ -98,13 +95,13 @@
 														for ($i=1; $i < 7; $i++) { 
 															$datetime_string = intval($heure).':'.$minutes.':00';
 															$heure2 = intval($heure).":".$minutes.":00";
-															case_complexe_commission($jour_semaine = $i, $heure2, $liste_terrains);
+															case_complexe_horaire($jour_semaine = $i, $heure2);
 														}
 
 														// pour le dimanche
 														$datetime_string = intval($heure).':'.$minutes.':00';
 														$heure2 = intval($heure).":".$minutes.":00";
-														case_complexe_commission(0, $heure2, $liste_terrains);
+														case_complexe_horaire(0, $heure2);
 													?>
 												</tr>
 											<?php
@@ -130,49 +127,34 @@
 </html> 
 <?php
 
-function entete_complexe_commission($tab_terrains){
+function entete_complexe_horaire(){
 	global $joursem;
-	global $joursem2; 
-	$colspan = count($tab_terrains);
+	global $joursem2;
 	?>
 		<tr class="entete_complexe_jour" style="text-align: center">
-			<th rowspan="2" style="height: 46px;">Heure</th>
+			<th style="height: 23px;">Heure</th>
 			<?php   
 				for ($i=0; $i < 7; $i++) { 
 					?>
-						<th  colspan="<?php echo $colspan; ?>">
+						<th>
 							<div> <?php echo $joursem2[$i]; ?> </div>
 						</th>
 					<?php
 				}
 			?>
 		</tr>
-		<tr style="text-align: center">
-			<?php   
-				for ($i=1; $i < 8; $i++) {
-					foreach ($tab_terrains as $terrain_key => $terrain_value) {
-						?>
-							<td>
-								<?php echo $terrain_value['terrain_nom']; ?>
-							</td>
-						<?php
-					}
-				}
-			?>
-		</tr>
 	<?php
 }                           
-function case_complexe_commission ($jour_semaine, $heure, $liste_terrains){
+function case_complexe_horaire ($jour_semaine, $heure){
 	global $joursem;
 	global $mois;
-	global $liste_tarifs_terrain;
+	global $horaires;
+	$creneau_rempli = 0;
 	$obj_heure = DateTime::createFromFormat('H:i:s', $heure);
-	foreach ($liste_terrains as $terrain => $val) {
-		$creneau_rempli = 0;
-				foreach ($liste_tarifs_terrain[$val[0]] as $tarif_key => $tarif_value) {
-					if ($tarif_value['tarif_heure_debut'] == $heure AND $tarif_value['tarif_jour'] == $jour_semaine ) {
-						$obj_heure_plage_debut = DateTime::createFromFormat('H:i:s', $tarif_value['tarif_heure_debut']);
-						$obj_heure_plage_fin = DateTime::createFromFormat('H:i:s', $tarif_value['tarif_heure_fin']);
+	foreach ($horaires as $horaire_key => $horaire_val) {
+		if ($horaire_val['heure_debut'] == $heure AND $horaire_val['jour_de_la_semaine'] == $jour_semaine ) {
+						$obj_heure_plage_debut = DateTime::createFromFormat('H:i:s', $heure_debut['eure_debut']);
+						$obj_heure_plage_fin = DateTime::createFromFormat('H:i:s', $heure_debut['heure_fin']);
 						$heure_debut_while = clone($obj_heure_plage_debut);
 						$heure_fin_while = clone($obj_heure_plage_fin);
 
@@ -183,54 +165,31 @@ function case_complexe_commission ($jour_semaine, $heure, $liste_terrains){
 						};
 
 						$hauteur = 23*$nb_demi_heure;
-						if($tarif_value['tarif_montant'] <=50 ){
-							$nv_com = 1;
-						}
-						elseif($tarif_value['tarif_montant'] <= 60 ){
-							$nv_com = 2;
-						}
-						elseif($tarif_value['tarif_montant'] <= 70 ){
-							$nv_com = 3;
-						}
-						elseif($tarif_value['tarif_montant'] <= 80 ){
-							$nv_com = 4;
-						}
-						elseif($tarif_value['tarif_montant'] <= 90 ){
-							$nv_com = 5;
-						}
-						elseif($tarif_value['tarif_montant'] <= 100 ){
-							$nv_com = 6;
-						}
-						else{
-							$nv_com = 7;
-						}
 						?>	
 							<td class="center <?php echo 'td_'.$nv_com; ?>" rowspan="<?php echo $nb_demi_heure; ?>" style="height: <?php echo $hauteur; ?>px;">
 								<p class="heure_prix"><?php echo $obj_heure_plage_debut->format('H:i').' - '.$obj_heure_plage_fin->format('H:i') ?></p>
-								<p class="prix"><?php echo $tarif_value['tarif_montant'].' €'; ?></p>
+								<p class="prix">Ouvert</p>
 							</td>
 						<?php
 						$creneau_rempli = 1;
 						break 1;
-					}
-					else{
-						$obj_heure_plage_debut = DateTime::createFromFormat('H:i:s', $tarif_value['tarif_heure_debut']);
-						$obj_heure_plage_fin = DateTime::createFromFormat('H:i:s', $tarif_value['tarif_heure_fin']);
-						if ($obj_heure > $obj_heure_plage_debut AND $obj_heure < $obj_heure_plage_fin AND $jour_semaine == $tarif_value['tarif_jour']){
-							// on ne fait rien car il s'agit d'une demi heure déjà comptée au sein d'une résa
-							$creneau_rempli = 1;
-							break 1;
-						}
-
-					}
-				}
-				if ($creneau_rempli == 0){
-					?>
-						<td class="center" class="not_defined">
-							---
-						</td>
-					<?php
-				}
+		}
+		else{
+			$obj_heure_plage_debut = DateTime::createFromFormat('H:i:s', $heure_debut['heure_debut']);
+			$obj_heure_plage_fin = DateTime::createFromFormat('H:i:s', $heure_debut['heure_fin']);
+			if ($obj_heure > $obj_heure_plage_debut AND $obj_heure < $obj_heure_plage_fin AND $jour_semaine == $heure_debut['jour_de_la_semaine']){
+				// on ne fait rien car il s'agit d'une demi heure déjà comptée au sein d'une résa
+				$creneau_rempli = 1;
+				break 1;
+			}
+		}
+	}
+	if ($creneau_rempli == 0){
+		?>
+			<td class="center" class="not_defined">
+				fermé
+			</td>
+		<?php
 	}
 }
 
