@@ -9,7 +9,7 @@
 	$joursem2 = array('lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi','dimanche');
 	$mois = array("janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "decembre");
 	$lieu_id = $_SESSION['complexe_id'];
-	$horaires = horaires_complexe($_SESSION['complexe_id']);
+	$horaires = liste_horaires_complexe($_SESSION['complexe_id']);
 	$id_histo = tracerComplexe();
 ?>
 
@@ -95,12 +95,20 @@
 														for ($i=1; $i < 7; $i++) { 
 															$datetime_string = intval($heure).':'.$minutes.':00';
 															$heure2 = intval($heure).":".$minutes.":00";
+															if (intval($heure) < 10){
+																$datetime_string = '0'.$datetime_string;
+																$heure2 = '0'.$heure2;
+															}
 															case_complexe_horaire($jour_semaine = $i, $heure2);
 														}
 
 														// pour le dimanche
 														$datetime_string = intval($heure).':'.$minutes.':00';
 														$heure2 = intval($heure).":".$minutes.":00";
+														if (intval($heure) < 10){
+															$datetime_string = '0'.$datetime_string;
+															$heure2 = '0'.$heure2;
+														}
 														case_complexe_horaire(0, $heure2);
 													?>
 												</tr>
@@ -153,31 +161,42 @@ function case_complexe_horaire ($jour_semaine, $heure){
 	$obj_heure = DateTime::createFromFormat('H:i:s', $heure);
 	foreach ($horaires as $horaire_key => $horaire_val) {
 		if ($horaire_val['heure_debut'] == $heure AND $horaire_val['jour_de_la_semaine'] == $jour_semaine ) {
-						$obj_heure_plage_debut = DateTime::createFromFormat('H:i:s', $heure_debut['eure_debut']);
-						$obj_heure_plage_fin = DateTime::createFromFormat('H:i:s', $heure_debut['heure_fin']);
+						$obj_heure_plage_debut = DateTime::createFromFormat('H:i:s', $horaire_val['heure_debut']);
+						$obj_heure_plage_fin = DateTime::createFromFormat('H:i:s', $horaire_val['heure_fin']);
 						$heure_debut_while = clone($obj_heure_plage_debut);
 						$heure_fin_while = clone($obj_heure_plage_fin);
 
 						$nb_demi_heure = 0;
-						while ($heure_debut_while < $heure_fin_while) {
-							$heure_debut_while->add(new DateInterval('PT30M'));
-							$nb_demi_heure++;
-						};
+						if($horaire_val['heure_fin'] == "00:00:00"){
+							$heure = 24 - $obj_heure_plage_debut->format('H');
+							$nb_demi_heure = $heure*2;
+							if( $obj_heure_plage_debut->format('H') == "30"){
+								$nb_demi_heure--;
+							}
+						}
+						else{
+							while ($heure_debut_while < $heure_fin_while) {
+								$heure_debut_while->add(new DateInterval('PT30M'));
+								$nb_demi_heure++;
+							}
+						}
+
 
 						$hauteur = 23*$nb_demi_heure;
 						?>	
-							<td class="center <?php echo 'td_'.$nv_com; ?>" rowspan="<?php echo $nb_demi_heure; ?>" style="height: <?php echo $hauteur; ?>px;">
+							<td class="center" rowspan="<?php echo $nb_demi_heure; ?>" style="height: <?php echo $hauteur; ?>px;">
 								<p class="heure_prix"><?php echo $obj_heure_plage_debut->format('H:i').' - '.$obj_heure_plage_fin->format('H:i') ?></p>
 								<p class="prix">Ouvert</p>
+								<?php //echo $jour_semaine ?>
 							</td>
 						<?php
 						$creneau_rempli = 1;
 						break 1;
 		}
 		else{
-			$obj_heure_plage_debut = DateTime::createFromFormat('H:i:s', $heure_debut['heure_debut']);
-			$obj_heure_plage_fin = DateTime::createFromFormat('H:i:s', $heure_debut['heure_fin']);
-			if ($obj_heure > $obj_heure_plage_debut AND $obj_heure < $obj_heure_plage_fin AND $jour_semaine == $heure_debut['jour_de_la_semaine']){
+			$obj_heure_plage_debut = DateTime::createFromFormat('H:i:s', $horaire_val['heure_debut']);
+			$obj_heure_plage_fin = DateTime::createFromFormat('H:i:s', $horaire_val['heure_fin']);
+			if ($obj_heure > $obj_heure_plage_debut AND $obj_heure < $obj_heure_plage_fin AND $jour_semaine == $horaire_val['jour_de_la_semaine']){
 				// on ne fait rien car il s'agit d'une demi heure déjà comptée au sein d'une résa
 				$creneau_rempli = 1;
 				break 1;
@@ -188,6 +207,7 @@ function case_complexe_horaire ($jour_semaine, $heure){
 		?>
 			<td class="center" class="not_defined">
 				fermé
+								<?php //echo $jour_semaine ?>
 			</td>
 		<?php
 	}

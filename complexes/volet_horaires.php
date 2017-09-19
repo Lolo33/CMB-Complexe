@@ -10,7 +10,7 @@
 								De :
 								<select name="heure_debut">
 									<?php
-										for ($i=10; $i < 23.5 ; $i=$i+0.5) { 
+										for ($i=8; $i < 24 ; $i=$i+0.5) { 
 											if (intval($i) == $i){
 												$minutes = "00";
 											}
@@ -31,7 +31,7 @@
 								À  :		
 								<select name="heure_fin">
 									<?php
-										for ($i=10; $i < 23.5 ; $i=$i+0.5) { 
+										for ($i=8; $i <= 24 ; $i=$i+0.5) { 
 											if (intval($i) == $i){
 												$minutes = "00";
 											}
@@ -74,6 +74,19 @@
 								}
 							?>
 					</div>
+			</div>
+			<div class="colonne">
+				<p class="titre_section_form">Action :</p>
+				<div class="liste">
+					<label>
+						<span>Ouvrir à la réservation</span>
+						<input type="radio" name="statut" value="1">
+					</label>
+					<label>
+						<span>Fermer à la réservation</span>
+						<input type="radio" name="statut" value="2">
+					</label>
+				</div>
 			</div>
 			<div class="center btn-form">
 				<input class="btn btn-success" type="submit" value="Valider">					
