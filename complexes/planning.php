@@ -11,10 +11,7 @@
 ?>
 
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,20 +26,14 @@
 	<link rel="shortcut icon" href="favicon.ico">
 
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="../css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="../css/icomoon.css">
-	<!-- Simple Line Icons -->
-	<link rel="stylesheet" href="../css/simple-line-icons.css">
+
 	<!-- Bootstrap  -->
 	<link rel="stylesheet" href="../css/bootstrap.css">
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="css/planning.css">
 	<link rel="stylesheet" href="css/style_complexe.css">
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/colors.css">
 
 	<!-- Modernizr JS -->
 	<script src="../js/modernizr-2.6.2.min.js"></script>
@@ -70,12 +61,12 @@
 							</div>
 						</div>
 					</div>
-			<h1 class="titre_section">
-                Planning
+			<h1 class="text-center">
+                Gérer votre planning en ligne
             </h1>
-			<div id="content_tarif">
+			<div id="content_tarif" class="fond-gris">
 				<?php include 'volet_planning.php'; ?>
-				<div id="corps" class="center effet1">
+				<div id="corps" class="center effet1 fond-clair">
 				<div id="post_planning" >
 					<?php
 						$format = 'Y-m-d'; 
@@ -124,22 +115,22 @@
 							$liste_terrains[$key]['plages_horaires'] = $liste_plages_horaires;
 						}
 					?>
-					<div class="ligne espacer2">
+					<div class="ligne espacer2" style="margin-bottom: 5px;">
 						<div>
 							<form action="planning.php" method="post">
 								<input type="hidden" name="jour" value="<?php echo $semaine_prec->format('j-m-Y'); ?>">
 								<input type="hidden" name="vue_semaine" value="1">
-								<button class="btn btn_semaine" type="submit"><span class="glyphicon glyphicon-arrow-left"></span> Semaine précédente <?php echo $semaine_prec->format('j/m'); ?></button>
+								<button class="btn" type="submit"><span class="glyphicon glyphicon-arrow-left"></span> Semaine précédente <?php echo $semaine_prec->format('j/m'); ?></button>
 							</form>
 						</div>
 						<div>
-							<span style="margin-bottom 0; color: white;font-size: 20px;">Semaine du <?php echo $date_min->format("d-m-Y") . ' au ' . $date_max->format("d-m-Y"); ?></span>
+							<span style="margin-bottom 0; color: white;font-size: 22px;">Vos horaires du <?php echo $date_min->format("d-m-Y") . ' au ' . $date_max->format("d-m-Y"); ?></span>
 						</div>
 						<div>
 							<form action="planning.php" method="post">
 								<input type="hidden" name="vue_semaine" value="1">
 								<input type="hidden" name="jour" value="<?php echo $semaine_suiv->format('j-m-Y'); ?>">
-								<button class="btn btn_semaine" type="submit">Semaine suivante <?php echo $semaine_suiv->format('j/m'); ?> <span class="glyphicon glyphicon-arrow-right"></span> </button>
+								<button class="btn" type="submit">Semaine suivante <?php echo $semaine_suiv->format('j/m'); ?> <span class="glyphicon glyphicon-arrow-right"></span> </button>
 							</form>
 						</div>
 					</div>

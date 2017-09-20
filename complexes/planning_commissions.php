@@ -49,6 +49,7 @@
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="css/planning.css">
 	<link rel="stylesheet" href="css/style_complexe.css">
+        <link rel="stylesheet" href="css/colors.css">
 
 	<!-- Modernizr JS -->
 	<script src="../js/modernizr-2.6.2.min.js"></script>
@@ -74,10 +75,10 @@
 							</div>
 						</div>
 					</div>
-			<h1 class="titre_section">Gestion des apports d'affaires</h1>
-			<div id="content_tarif">
+			<h1 class="text-center">Gestion des apports d'affaires</h1>
+			<div id="content_tarif" class="fond-gris">
 				<?php include 'volet_commission.php'; ?>
-				<div id="corps" class="center">
+				<div id="corps" class="center fond-clair">
 					<div id="post_planning">
 						<?php 
 							//$lieu_id = $_SESSION['gerant_lieu_id'];
@@ -85,7 +86,6 @@
 							$heure_max = 24.0;
 							
 						?>
-						<h3 style="color: white;"">Apports d'affaires</h3>
 						<div class="tableau"> 
 								<table>
 									<?php 

@@ -1,5 +1,5 @@
-<div id="volet-tarif" style="min-width: 250px;" class="effet1">
-    <button class="btn btn-grand" id="aide" style="padding:5px;" data-toggle="modal" data-target="#modal_aide">
+<div id="volet-tarif" style="min-width: 250px;" class="effet1 fond-clair">
+    <button class="btn" id="aide" data-toggle="modal" data-target="#modal_aide">
         <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
         <span>Aide</span>
     </button>
@@ -26,7 +26,7 @@
 					</label>
 				</div>
 				<div class="center">
-					<input class="btn btn-success btn2 center" style="width: 100%;" id="submit_form" type="submit">
+					<input class="btn btn-valid center" style="width: 100%;" id="submit_form" type="submit">
 				</div>
 			</div>
 		</form>
