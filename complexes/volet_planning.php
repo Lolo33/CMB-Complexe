@@ -1,4 +1,8 @@
-<div id="volet-tarif" class="effet1">
+<div id="volet-tarif" style="min-width: 250px;" class="effet1">
+    <button id="aide" class="btn-grand" data-toggle="modal" data-target="#modal_aide">
+        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+        <span>Aide</span>
+    </button>
 	<h3 class="center">Choisir votre date</h3>
 		<hr/>
 	<div class="has-feedback">
@@ -9,7 +13,7 @@
 					<span id="datepicker" value="<?php if (isset($_POST['jour'])) { echo $_POST['jour']; } ?>"></span>
 				</div>
 				<div class="center">
-					<span>Vue: </span>
+					<span>Afficher par :</span>
 				</div>
 				<div class="ligne espacer1">
 					<label>
@@ -22,7 +26,7 @@
 					</label>
 				</div>
 				<div class="center">
-					<input class="btn btn-success btn2 center" id="submit_form" type="submit">
+					<input class="btn btn-success btn2 center" style="width: 100%;" id="submit_form" type="submit">
 				</div>
 			</div>
 		</form>

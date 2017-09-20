@@ -166,6 +166,9 @@ th{
 .navbar-nav{
 	margin: 0px;
 }
+label span {
+	margin: 0 7px;
+}
 .titre_section {
 	text-align: center;
     font-size: 20px;
@@ -173,19 +176,15 @@ th{
     -webkit-box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.75);
     box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.75);
-    background:#6BBA70;
-    background-color: rgb(66,133,244);
+    background: darkslategrey;
     color: white;
-    padding: 5px;
-    margin: 15px;
-    margin-left: 25%;
-    margin-right: 25%;
+	font-weight: bold;
+    padding: 20px 0;
+	width: 100%;
+    margin: 0;
     border-radius: 3px;
 }
 .effet1 {
-    -webkit-box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.75);
-    box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.75);
     margin-bottom: 15px;
 }
 .nav > li > a{
@@ -204,16 +203,15 @@ th{
 	font-size: 13px;
 }
 .btn_semaine{
-	background-color: #6BBA70;
-	color: #333333;
-	padding: 2px;
+	background-color: #f5f5f5;
+	padding: 5px 10px;
 	border-radius: 3px;
+	color: #111111;
 }
 .btn_semaine:hover{
-	color: #111111;
-	padding: 2px;
-	border-radius: 3px;
+	background: lightslategrey;
 }
+
 #corps table{
 	color: #333333;
 }
