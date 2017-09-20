@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcb1bc78-1505-41a6-a6f4-c029bd89fcba" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/complexes/css/planning.css" afterPath="$PROJECT_DIR$/complexes/css/planning.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/complexes/planning.php" afterPath="$PROJECT_DIR$/complexes/planning.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/complexes/volet_commission.php" afterPath="$PROJECT_DIR$/complexes/volet_commission.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/complexes/volet_planning.php" afterPath="$PROJECT_DIR$/complexes/volet_planning.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/complexes/volet_tarifs.php" afterPath="$PROJECT_DIR$/complexes/volet_tarifs.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,12 +26,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="volet_tarifs.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="volet_tarifs.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/complexes/volet_tarifs.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="593">
-              <caret line="104" column="55" lean-forward="false" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
-              <folding />
+            <state relative-caret-position="21">
+              <caret line="1" column="111" lean-forward="false" selection-start-line="1" selection-start-column="111" selection-end-line="1" selection-end-column="111" />
+              <folding>
+                <element signature="n#style#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -68,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="volet_planning.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="volet_planning.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/complexes/volet_planning.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-118">
-              <caret line="1" column="22" lean-forward="true" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="23" />
+            <state relative-caret-position="21">
+              <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="111" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#div#0;n#!!top" expanded="true" />
@@ -85,9 +87,11 @@
       <file leaf-file-name="volet_commission.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/complexes/volet_commission.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="122" column="22" lean-forward="true" selection-start-line="122" selection-start-column="22" selection-end-line="122" selection-end-column="22" />
-              <folding />
+            <state relative-caret-position="21">
+              <caret line="1" column="111" lean-forward="false" selection-start-line="1" selection-start-column="111" selection-end-line="1" selection-end-column="111" />
+              <folding>
+                <element signature="n#style#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -145,14 +149,14 @@
         <option value="$PROJECT_DIR$/complexes/header_resa.php" />
         <option value="$PROJECT_DIR$/complexes/planning_tarifs.php" />
         <option value="$PROJECT_DIR$/complexes/planning_commissions.php" />
-        <option value="$PROJECT_DIR$/complexes/volet_commission.php" />
         <option value="$PROJECT_DIR$/complexes/css/style_complexe.css" />
-        <option value="$PROJECT_DIR$/complexes/volet_tarifs.php" />
         <option value="$PROJECT_DIR$/complexes/volet.php" />
         <option value="$PROJECT_DIR$/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/complexes/planning.php" />
         <option value="$PROJECT_DIR$/complexes/css/planning.css" />
         <option value="$PROJECT_DIR$/complexes/volet_planning.php" />
+        <option value="$PROJECT_DIR$/complexes/volet_commission.php" />
+        <option value="$PROJECT_DIR$/complexes/volet_tarifs.php" />
       </list>
     </option>
   </component>
@@ -206,6 +210,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api_complexe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api_complexe" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="complexes" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -312,12 +330,12 @@
       <updated>1505477489223</updated>
       <workItem from="1505477490355" duration="1194000" />
       <workItem from="1505729245470" duration="5144000" />
-      <workItem from="1505891404769" duration="6369000" />
+      <workItem from="1505891404769" duration="6507000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12707000" />
+    <option name="totallyTimeSpent" value="12845000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="0" width="1924" height="1050" extended-state="0" />
@@ -487,14 +505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/complexes/volet_commission.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="122" column="22" lean-forward="true" selection-start-line="122" selection-start-column="22" selection-end-line="122" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/complexes/volet.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -515,14 +525,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
           <caret line="174" column="17" lean-forward="true" selection-start-line="174" selection-start-column="17" selection-end-line="174" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/complexes/volet_tarifs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="593">
-          <caret line="104" column="55" lean-forward="false" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
           <folding />
         </state>
       </provider>
@@ -555,12 +557,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/complexes/volet_planning.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-118">
-          <caret line="1" column="22" lean-forward="true" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="23" />
+        <state relative-caret-position="21">
+          <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="111" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#3;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/complexes/volet_commission.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="111" lean-forward="false" selection-start-line="1" selection-start-column="111" selection-end-line="1" selection-end-column="111" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/complexes/volet_tarifs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="111" lean-forward="false" selection-start-line="1" selection-start-column="111" selection-end-line="1" selection-end-column="111" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
