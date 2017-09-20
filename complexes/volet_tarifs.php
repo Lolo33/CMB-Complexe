@@ -1,4 +1,8 @@
 <div id="volet-tarif" class="effet1">
+    <button id="aide" data-toggle="modal" data-target="#modal_aide">
+        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+        <span>Aide</span>
+    </button>
 	<h3 class="center">Modification des tarifs</h3>
 	<hr/>
 	<div id="formulaire_tarifs">
@@ -98,7 +102,7 @@
 						<span> € </span>
 				</div>
 				<div class="center btn-form">
-					<input class="btn btn-success" type="submit" value="Valider">					
+					<input class="btn btn-success grand" type="submit" value="Valider">
 				</div>
 						
 					</form>
