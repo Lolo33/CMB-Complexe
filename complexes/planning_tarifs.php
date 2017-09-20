@@ -47,12 +47,6 @@
 		
 		<?php include 'volet.php'; ?>
 		<div id="page_principale"  class="effet1">
-					<div>
-						<button id="aide" data-toggle="modal" data-target="#modal_aide">
-							<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-							<span>Aide</span>
-						</button>
-					</div>
 					<div class="modal fade" id="modal_aide" tabindex="-1" role="dialog">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">

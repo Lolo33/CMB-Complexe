@@ -47,29 +47,29 @@
     <div class="container-fluid ligne espacer2" >
             <ul class="nav navbar-nav">
             	<li>
-            		<a class="navbar-brand" href="#">CMB Administration</a>
+            		<a class="navbar-brand" href="#">ConnectMyBooking</a>
             	</li>
             </ul>
             <ul class="nav navbar-nav center ligne espacer1" style="flex: 1;"">
                 <li <?php activeMenuIfContain("/planning_accueil"); ?>>
-                    <a href="planning_accueil.php"><span class="glyphicon glyphicon-home"></span> Accueil<span class="sr-only">(current)</span></a>
+                    <a href="planning_accueil.php"><span class="glyphicon glyphicon-home"></span> Accueil</a>
                 </li>
-                <li <?php activeMenuIfContain("/planning_planning"); ?>>
-                    <a href="planning.php"><span class="glyphicon glyphicon-calendar"></span> Planning<span class="sr-only">(current)</span></a>
+                <li <?php activeMenuIfContain("/planning."); ?>>
+                    <a href="planning.php"><span class="glyphicon glyphicon-calendar"></span> Planning</a>
                 </li>
                 <li <?php activeMenuIfContain("/planning_horaires"); ?>>
-                    <a href="planning_horaires.php"><span class="glyphicon glyphicon-time"></span>Gérez vos horaires<span class="sr-only">(current)</span></a>
+                    <a href="planning_horaires.php"><span class="glyphicon glyphicon-time"></span> Gérez vos horaires</a>
                 </li>
                 <li <?php activeMenuIfContain("/planning_tarifs"); ?>>
-                    <a href="planning_tarifs.php"><span class="glyphicon glyphicon-eur"></span>Gérez vos tarifs<span class="sr-only">(current)</span></a>
+                    <a href="planning_tarifs.php"><span class="glyphicon glyphicon-eur"></span> Gérez vos tarifs</a>
                 </li>
                 <li <?php activeMenuIfContain("/planning_commissions"); ?>>
-                    <a href="planning_commissions.php"><span class="glyphicon glyphicon-briefcase"></span>Gérez vos apporteurs d'affaires<span class="sr-only">(current)</span></a>
+                    <a href="planning_commissions.php"><span class="glyphicon glyphicon-briefcase"></span> Gérez vos apporteurs d'affaires</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav">
                 <li>
-                	<a href="deconnexion"><span class="glyphicon glyphicon-off"><span>Deconnexion</span></a>
+                	<a href="deconnexion"><span class="glyphicon glyphicon-off"><span> Deconnexion</span></a>
                 </li>
             </ul>
 

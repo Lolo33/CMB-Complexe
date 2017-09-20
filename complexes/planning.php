@@ -56,12 +56,6 @@
 	<body>
 		<?php include 'volet.php'; ?>
 		<div id="page_principale"  class="effet1">
-					<div>
-						<button id="aide" data-toggle="modal" data-target="#modal_aide">
-							<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-							<span>Aide</span>
-						</button>
-					</div>
 					<div class="modal fade" id="modal_aide" tabindex="-1" role="dialog">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
@@ -76,7 +70,9 @@
 							</div>
 						</div>
 					</div>
-			<h1 class="titre_section">Planning</h1>
+			<h1 class="titre_section">
+                Planning
+            </h1>
 			<div id="content_tarif">
 				<?php include 'volet_planning.php'; ?>
 				<div id="corps" class="center effet1">
@@ -137,13 +133,13 @@
 							</form>
 						</div>
 						<div>
-							<p style="color: white;">Semaine</p>
+							<span style="margin-bottom 0; color: white;font-size: 20px;">Semaine du <?php echo $date_min->format("d-m-Y") . ' au ' . $date_max->format("d-m-Y"); ?></span>
 						</div>
 						<div>
 							<form action="planning.php" method="post">
 								<input type="hidden" name="vue_semaine" value="1">
 								<input type="hidden" name="jour" value="<?php echo $semaine_suiv->format('j-m-Y'); ?>">
-								<button class="btn_semaine" type="submit">Semaine précédente <?php echo $semaine_suiv->format('j/m'); ?></button>
+								<button class="btn_semaine" type="submit">Semaine suivante <?php echo $semaine_suiv->format('j/m'); ?></button>
 							</form>
 						</div>
 					</div>
@@ -345,7 +341,7 @@
 								</div>
 							</div>
 							<hr/>
-							<input type="submit" class="btn btn-success center" value="Valider">
+							<input type="submit" class="btn btn-success center " value="Valider">
 						</form>
 					</div>
 				</div>
