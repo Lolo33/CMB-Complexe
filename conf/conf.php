@@ -7,29 +7,17 @@ global $db;
 global $param;
 
 function tracerComplexe(){
-
    $db = connexionBdd();
-
    $req = $db->query("SELECT * FROM historique_navigation_complexe;");
-
    $req->execute();
-
    $id_histo = $req->rowCount() + 1;
-
    $req_ajout = $db->prepare("INSERT INTO historique_navigation_complexe (id, complexe_id, url, debut_visite, ip) VALUES (:id, :idcomplexe, :url, NOW(), :ip)");
-
    $req_ajout->bindValue(":id", $id_histo, PDO::PARAM_INT);
-
    $req_ajout->bindValue(":idcomplexe", $_SESSION["complexe_id"], PDO::PARAM_INT);
-
    $req_ajout->bindValue(":url", $_SERVER["REQUEST_URI"], PDO::PARAM_STR);
-
    $req_ajout->bindValue(":ip", $_SERVER["REMOTE_ADDR"], PDO::PARAM_STR);
-
    $req_ajout->execute();
-
    return $id_histo;
-
 }
 
 function activeMenuIfContain($chaine){
@@ -1062,34 +1050,50 @@ function maj_commissions($heure_debut, $heure_fin, $terrains, $aa, $jours, $comm
 
 					$plages_com_terrain_aa = liste_commissions_terrain_aa($terrain_value, $aa_value);
 					foreach ($plages_com_terrain_aa as $plage_com_aa_key => $plage_com_aa_value) {
-						//echo "dernier foreach <br/>";
 						if ($plage_com_aa_value['com_jour'] == $jour_value){
-							//echo "test du jour ok <br/>";
 							$obj_heure_plage_debut2 = DateTime::createFromFormat('H:i:s', $plage_com_aa_value['com_heure_debut']);
 							$obj_heure_plage_fin2 = DateTime::createFromFormat('H:i:s', $plage_com_aa_value['com_heure_fin']);
 							
 							//Si la plage déclarée inclue la plage testée, => DELETE (au profit de la nouvelle plage) [6-8] + [2-9] => [2-9]
-							if ($obj_heure_plage_debut <= $obj_heure_plage_debut2 AND $obj_heure_plage_fin >= $obj_heure_plage_fin2){
+							if (
+								$obj_heure_plage_debut <= $obj_heure_plage_debut2 
+								AND 
+								(
+									$obj_heure_plage_fin >= $obj_heure_plage_fin2
+									AND
+									$plage_com_aa_value['com_heure_fin'] != "00:00:00"
+								)
+								OR
+								$heure_fin == "00:00:00"
+
+							){
 								$req = $db->prepare('DELETE FROM planning_commission WHERE id = :id_com');
 								$req->bindValue(":id_com", $plage_com_aa_value['id'], PDO::PARAM_INT);
 								$req->execute();
 								unset($req);
-								//echo "delete";
 							}
 							//Si la nouvelle plage est inclu dans une plage plus grande => on scinde en plusieurs plages [1-9] + [2-5] => [1-2]+[2-5]+[5-9]
-							elseif ($obj_heure_plage_debut >= $obj_heure_plage_debut2 AND $obj_heure_plage_fin <= $obj_heure_plage_fin2){
+							elseif (
+								$obj_heure_plage_debut >= $obj_heure_plage_debut2 
+								AND 
+								(
+									$obj_heure_plage_fin <= $obj_heure_plage_fin2
+									AND
+									$heure_fin != "00:00:00"									
+								)
+								OR 
+								$plage_com_aa_value['com_heure_fin'] == "00:00:00"
+							){
 
 								// On vérifie qu'il s'agisse d'une MAj
 								if ($commission == $plage_com_aa_value['com_montant'] OR ($interdiction == 1 AND ( empty($plage_com_aa_value['com_montant']) OR $plage_com_aa_value['com_montant'] == NULL) ) ){
 								 	// Pas de MAJ
-								 	//echo "pas de maj <br/>";
 								}
 								elseif ($obj_heure_plage_debut == $obj_heure_plage_debut2){
 									//[1-9] + [3-9] => [1-3] + [3-9] (commun par la fin)
 									// on scinde en deux
 									// maj le début l'acienne plage par réduction de la période
 									//insert la nouvelle
-									//echo "même début donc on décale le début de l'ancienne <br/>";
 									$req = $db->prepare('
 										UPDATE planning_commission
 										SET com_heure_debut = :heure_debut
@@ -1102,7 +1106,6 @@ function maj_commissions($heure_debut, $heure_fin, $terrains, $aa, $jours, $comm
 									unset($req);
 								}
 								elseif ($obj_heure_plage_fin == $obj_heure_plage_fin2){
-									//echo "même fin donc on décale la fin  de l'ancienne <br/>";
 									//[1-9] + [1-4] => [1-4] + [4-9] (commun par le début)
 									// on scinde en deux
 									// maj le début l'acienne plage par réduction de la période
@@ -1120,7 +1123,7 @@ function maj_commissions($heure_debut, $heure_fin, $terrains, $aa, $jours, $comm
 									unset($req);
 								}
 								else{
-									//echo "strictement inclu <br/>";
+									//"strictement inclu <br/>";
 									//[1-9] + [3-5] => [1-3] + [3-5] + [5-9]
 									//on supprimme l'ancienne
 									//on crée une plage avec le mêmes propriétés que l'ancienne avec début identique à l'ancien et fin = début de la nouvelle plage
@@ -1160,7 +1163,30 @@ function maj_commissions($heure_debut, $heure_fin, $terrains, $aa, $jours, $comm
 								}
 							}
 							//Si chevauchement des plages cas 1 : [3-7] + [1-5] => [1-5] + [5-7]
-							elseif ($obj_heure_plage_debut < $obj_heure_plage_debut2 AND $obj_heure_plage_fin < $obj_heure_plage_fin2 AND $obj_heure_plage_fin > $obj_heure_plage_debut2){
+							elseif (
+									$obj_heure_plage_debut < $obj_heure_plage_debut2 
+								AND (
+										(
+											$obj_heure_plage_fin < $obj_heure_plage_fin2
+											AND
+											$heure_fin != "00:00:00"
+										)
+										OR(
+											$plage_com_aa_value['com_heure_fin'] == "00:00:00" 
+											AND 
+											$heure_fin != "00:00:00"
+										)
+									)								
+								AND (
+										(
+											$obj_heure_plage_fin > $obj_heure_plage_debut2
+											AND
+											$plage_com_aa_value['com_heure_fin'] != "00:00:00" 
+										)
+										OR
+										$heure_fin != "00:00:00"
+									)
+							){
 									//echo "chevauchement 1 <br/>";
 									// maj le début l'acienne plage par réduction de la période
 									//insert la nouvelle
@@ -1176,7 +1202,31 @@ function maj_commissions($heure_debut, $heure_fin, $terrains, $aa, $jours, $comm
 									unset($req);
 							}
 							//Si chevauchement des plages cas 1 : [3-7] + [5-9] => [3-5] + [5-9]
-							elseif ($obj_heure_plage_debut > $obj_heure_plage_debut2 AND $obj_heure_plage_debut < $obj_heure_plage_fin2 AND $obj_heure_plage_fin > $obj_heure_plage_fin2){
+							elseif (
+									$obj_heure_plage_debut > $obj_heure_plage_debut2 
+								AND (
+										$obj_heure_plage_debut < $obj_heure_plage_fin2
+										OR
+										(
+											$heure_fin == "00:00:00"
+											AND
+											$plage_com_aa_value['com_heure_fin'] != "00:00:00" 
+										)
+									)	
+								AND (
+										(
+											$obj_heure_plage_fin > $obj_heure_plage_fin2
+											AND
+											$plage_com_aa_value['com_heure_fin'] != "00:00:00"
+										)
+										OR
+										(
+											$plage_com_aa_value['com_heure_fin'] != "00:00:00" 
+											AND
+											$heure_fin == "00:00:00"
+										)
+									)
+							){
 									//echo "chevauchement 2 <br/>";
 									// maj le début l'acienne plage par réduction de la période
 									//insert la nouvelle
@@ -1384,10 +1434,5 @@ function maj_tarifs($heure_debut, $heure_fin, $terrains, $jours, $tarif){
 		return false;
 	}
 }
-
-
-
-
-
 
 ?>

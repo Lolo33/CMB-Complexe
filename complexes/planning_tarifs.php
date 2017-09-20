@@ -98,12 +98,20 @@
 														for ($i=1; $i < 7; $i++) { 
 															$datetime_string = intval($heure).':'.$minutes.':00';
 															$heure2 = intval($heure).":".$minutes.":00";
+															if (intval($heure) < 10){
+																$datetime_string = '0'.$datetime_string;
+																$heure2 = '0'.$heure2;
+															}
 															case_complexe_commission($jour_semaine = $i, $heure2, $liste_terrains);
 														}
 
 														// pour le dimanche
 														$datetime_string = intval($heure).':'.$minutes.':00';
 														$heure2 = intval($heure).":".$minutes.":00";
+														if (intval($heure) < 10){
+															$datetime_string = '0'.$datetime_string;
+															$heure2 = '0'.$heure2;
+														}
 														case_complexe_commission(0, $heure2, $liste_terrains);
 													?>
 												</tr>

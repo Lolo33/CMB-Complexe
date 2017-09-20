@@ -1,6 +1,6 @@
 <?php
-	include '../conf/conf.php';
-	//var_dump($_POST);
+	include '../conf.php';
+var_dump($_POST);
 	if( isset($_POST['aa']) AND isset($_POST['terrain']) AND isset($_POST['heure_fin']) AND isset($_POST['heure_debut']) AND isset($_POST['jour']) AND isset($_POST['commission'])){
 		if (isset($_POST['interdiction'])){
 			$interdiction = htmlspecialchars(trim($_POST['interdiction']));
@@ -18,9 +18,5 @@
 
 	maj_commissions($heure_debut, $heure_fin, $terrains, $aa, $jours, $commission, $interdiction);
 
-	header('location:planning_commissions.php');
-
-
-
-
+	//header('location:planning_commissions.php');
 ?>

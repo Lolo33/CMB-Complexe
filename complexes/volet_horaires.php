@@ -21,7 +21,7 @@
 											$heure2 = intval($i).":".$minutes.":00";
 											?>
 
-											<option value="<?php echo $heure2; ?>"><?php echo intval($i).":".$minutes; ?></option>
+											<option value="<?php if ($heure2 == "24:00:00") {echo "00:00:00"; } else { echo $heure2; }?>"><?php echo intval($i).":".$minutes; ?></option>
 											<?php
 										}
 									?>
@@ -42,7 +42,7 @@
 											$heure2 = intval($i).":".$minutes.":00";
 											?>
 
-											<option value="<?php echo $heure2; ?>"><?php echo intval($i).":".$minutes; ?></option>
+											<option value="<?php if ($heure2 == "24:00:00") {echo "00:00:00"; } else { echo $heure2; }?>"><?php echo intval($i).":".$minutes; ?></option>
 											<?php
 										}
 									?>

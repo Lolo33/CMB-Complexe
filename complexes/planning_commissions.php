@@ -113,7 +113,6 @@
 															$heure2 = intval($heure).":".$minutes.":00";
 															case_complexe_commission($jour_semaine = $i, $heure2, $liste_terrains);
 														}
-
 														// pour le dimanche
 														$datetime_string = intval($heure).':'.$minutes.':00';
 														$heure2 = intval($heure).":".$minutes.":00";
@@ -143,7 +142,6 @@
 	</body>
 </html> 
 <?php
-
 function entete_complexe_commission($tab_terrains){
 	global $liste_aa;
 	$db = connexionBdd();
@@ -194,7 +192,6 @@ function case_complexe_commission ($jour_semaine, $heure, $liste_terrains){
 			//var_dump($liste_commissions_terrain_aa[$val[0]]);
 				//echo "test";
 				foreach ($liste_commissions_terrain_aa[$val[0]][$aa_val[0]]['liste_com'] as $plage_com_key => $plage_com_value) {
-
 					$obj_heure_plage_debut = DateTime::createFromFormat('H:i:s', $plage_com_value['com_heure_debut']);
 					$obj_heure_plage_fin = DateTime::createFromFormat('H:i:s', $plage_com_value['com_heure_fin']);
 					$heure_debut_while = clone($obj_heure_plage_debut);
@@ -205,7 +202,6 @@ function case_complexe_commission ($jour_semaine, $heure, $liste_terrains){
 							$heure_debut_while->add(new DateInterval('PT30M'));
 							$nb_demi_heure++;
 						};
-
 						$hauteur = 23*$nb_demi_heure;
 						$hauteur = $hauteur.'px';
 						if($plage_com_value['com_montant'] == 0 ){
@@ -266,10 +262,3 @@ function case_complexe_commission ($jour_semaine, $heure, $liste_terrains){
 	}
 }
 ?>
-
-
-
-
-
-
-
