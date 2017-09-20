@@ -205,13 +205,14 @@ label span {
 	font-size: 13px;
 }
 .btn_semaine{
-	background-color: #f5f5f5;
-	padding: 5px 10px;
+	background-color: darkslategrey;
+	padding: 10px 10px;
 	border-radius: 3px;
-	color: #111111;
+	color: #ffffff;
+	margin-bottom: 20px;
 }
 .btn_semaine:hover{
-	background: lightslategrey;
+	color: #dddddd;
 }
 
 #corps table{

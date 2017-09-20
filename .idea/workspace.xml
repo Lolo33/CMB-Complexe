@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcb1bc78-1505-41a6-a6f4-c029bd89fcba" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/complexes/css/planning.css" afterPath="$PROJECT_DIR$/complexes/css/planning.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/complexes/css/style_complexe.css" afterPath="$PROJECT_DIR$/complexes/css/style_complexe.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/complexes/planning.php" afterPath="$PROJECT_DIR$/complexes/planning.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/complexes/planning_commissions.php" afterPath="$PROJECT_DIR$/complexes/planning_commissions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/complexes/planning_tarifs.php" afterPath="$PROJECT_DIR$/complexes/planning_tarifs.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/complexes/volet.php" afterPath="$PROJECT_DIR$/complexes/volet.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/complexes/volet_commission.php" afterPath="$PROJECT_DIR$/complexes/volet_commission.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/complexes/volet_planning.php" afterPath="$PROJECT_DIR$/complexes/volet_planning.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/complexes/volet_tarifs.php" afterPath="$PROJECT_DIR$/complexes/volet_tarifs.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap.css" afterPath="$PROJECT_DIR$/css/bootstrap.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,16 +16,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="style_complexe.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/complexes/css/style_complexe.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="172" column="7" lean-forward="false" selection-start-line="172" selection-start-column="6" selection-end-line="172" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="planning_tarifs.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/complexes/planning_tarifs.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -57,18 +39,18 @@
       <file leaf-file-name="planning.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/complexes/css/planning.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="519">
-              <caret line="229" column="4" lean-forward="false" selection-start-line="229" selection-start-column="4" selection-end-line="229" selection-end-column="30" />
+            <state relative-caret-position="152">
+              <caret line="213" column="10" lean-forward="false" selection-start-line="213" selection-start-column="10" selection-end-line="213" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
+      <file leaf-file-name="style_complexe.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/complexes/css/style_complexe.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="5030" column="28" lean-forward="false" selection-start-line="5030" selection-start-column="28" selection-end-line="5030" selection-end-column="28" />
+            <state relative-caret-position="215">
+              <caret line="174" column="17" lean-forward="true" selection-start-line="174" selection-start-column="17" selection-end-line="174" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -77,8 +59,8 @@
       <file leaf-file-name="planning.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/complexes/planning.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1894">
-              <caret line="135" column="33" lean-forward="false" selection-start-line="135" selection-start-column="33" selection-end-line="135" selection-end-column="33" />
+            <state relative-caret-position="80">
+              <caret line="131" column="121" lean-forward="false" selection-start-line="131" selection-start-column="121" selection-end-line="131" selection-end-column="121" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -86,13 +68,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="volet_planning.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="volet_planning.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/complexes/volet_planning.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="28" column="82" lean-forward="false" selection-start-line="28" selection-start-column="82" selection-end-line="28" selection-end-column="82" />
+            <state relative-caret-position="-118">
+              <caret line="1" column="22" lean-forward="true" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="23" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#div#3;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -140,14 +123,15 @@
       <find>titre_s</find>
       <find>titre_section</find>
       <find>content</find>
-      <find>aide</find>
       <find>volet-ta</find>
-      <find>Semaine</find>
       <find>titre</find>
       <find>.navbar</find>
       <find>.navbar-nav</find>
       <find>.navbar-default</find>
       <find>navbar</find>
+      <find>btn_s</find>
+      <find>aide</find>
+      <find>Semaine</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -161,14 +145,14 @@
         <option value="$PROJECT_DIR$/complexes/header_resa.php" />
         <option value="$PROJECT_DIR$/complexes/planning_tarifs.php" />
         <option value="$PROJECT_DIR$/complexes/planning_commissions.php" />
-        <option value="$PROJECT_DIR$/complexes/volet_planning.php" />
         <option value="$PROJECT_DIR$/complexes/volet_commission.php" />
         <option value="$PROJECT_DIR$/complexes/css/style_complexe.css" />
         <option value="$PROJECT_DIR$/complexes/volet_tarifs.php" />
-        <option value="$PROJECT_DIR$/complexes/planning.php" />
         <option value="$PROJECT_DIR$/complexes/volet.php" />
-        <option value="$PROJECT_DIR$/complexes/css/planning.css" />
         <option value="$PROJECT_DIR$/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/complexes/planning.php" />
+        <option value="$PROJECT_DIR$/complexes/css/planning.css" />
+        <option value="$PROJECT_DIR$/complexes/volet_planning.php" />
       </list>
     </option>
   </component>
@@ -328,12 +312,12 @@
       <updated>1505477489223</updated>
       <workItem from="1505477490355" duration="1194000" />
       <workItem from="1505729245470" duration="5144000" />
-      <workItem from="1505891404769" duration="3568000" />
+      <workItem from="1505891404769" duration="6369000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9906000" />
+    <option name="totallyTimeSpent" value="12707000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="0" width="1924" height="1050" extended-state="0" />
@@ -341,7 +325,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25757575" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299435" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -409,6 +393,7 @@
           <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="30" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#3;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -494,37 +479,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/complexes/planning_tarifs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="48" column="50" lean-forward="false" selection-start-line="48" selection-start-column="50" selection-end-line="48" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/complexes/planning_commissions.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="61" column="50" lean-forward="false" selection-start-line="61" selection-start-column="50" selection-end-line="61" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/complexes/volet_planning.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="28" column="82" lean-forward="false" selection-start-line="28" selection-start-column="82" selection-end-line="28" selection-end-column="82" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#3;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/complexes/volet_tarifs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="593">
-          <caret line="104" column="55" lean-forward="false" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
           <folding />
         </state>
       </provider>
@@ -537,16 +495,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/complexes/planning.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1894">
-          <caret line="135" column="33" lean-forward="false" selection-start-line="135" selection-start-column="33" selection-end-line="135" selection-end-column="33" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/complexes/volet.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -555,27 +503,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9">
+          <caret line="5016" column="32" lean-forward="true" selection-start-line="5016" selection-start-column="32" selection-end-line="5016" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/complexes/css/style_complexe.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="172" column="7" lean-forward="false" selection-start-line="172" selection-start-column="6" selection-end-line="172" selection-end-column="7" />
+        <state relative-caret-position="215">
+          <caret line="174" column="17" lean-forward="true" selection-start-line="174" selection-start-column="17" selection-end-line="174" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/complexes/volet_tarifs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="593">
+          <caret line="104" column="55" lean-forward="false" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/complexes/css/planning.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="229" column="4" lean-forward="false" selection-start-line="229" selection-start-column="4" selection-end-line="229" selection-end-column="30" />
+        <state relative-caret-position="152">
+          <caret line="213" column="10" lean-forward="false" selection-start-line="213" selection-start-column="10" selection-end-line="213" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
+    <entry file="file://$PROJECT_DIR$/complexes/planning_tarifs.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="5030" column="28" lean-forward="false" selection-start-line="5030" selection-start-column="28" selection-end-line="5030" selection-end-column="28" />
+        <state relative-caret-position="85">
+          <caret line="48" column="50" lean-forward="false" selection-start-line="48" selection-start-column="50" selection-end-line="48" selection-end-column="50" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/complexes/planning.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="131" column="121" lean-forward="false" selection-start-line="131" selection-start-column="121" selection-end-line="131" selection-end-column="121" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/complexes/volet_planning.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-118">
+          <caret line="1" column="22" lean-forward="true" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="23" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#3;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

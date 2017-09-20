@@ -129,7 +129,7 @@
 							<form action="planning.php" method="post">
 								<input type="hidden" name="jour" value="<?php echo $semaine_prec->format('j-m-Y'); ?>">
 								<input type="hidden" name="vue_semaine" value="1">
-								<button class="btn_semaine" type="submit">Semaine précédente <?php echo $semaine_prec->format('j/m'); ?></button>
+								<button class="btn btn_semaine" type="submit"><span class="glyphicon glyphicon-arrow-left"></span> Semaine précédente <?php echo $semaine_prec->format('j/m'); ?></button>
 							</form>
 						</div>
 						<div>
@@ -139,7 +139,7 @@
 							<form action="planning.php" method="post">
 								<input type="hidden" name="vue_semaine" value="1">
 								<input type="hidden" name="jour" value="<?php echo $semaine_suiv->format('j-m-Y'); ?>">
-								<button class="btn_semaine" type="submit">Semaine suivante <?php echo $semaine_suiv->format('j/m'); ?></button>
+								<button class="btn btn_semaine" type="submit">Semaine suivante <?php echo $semaine_suiv->format('j/m'); ?> <span class="glyphicon glyphicon-arrow-right"></span> </button>
 							</form>
 						</div>
 					</div>

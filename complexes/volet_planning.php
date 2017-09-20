@@ -1,5 +1,5 @@
 <div id="volet-tarif" style="min-width: 250px;" class="effet1">
-    <button id="aide" class="btn-grand" data-toggle="modal" data-target="#modal_aide">
+    <button class="btn btn-grand" id="aide" style="padding:5px; font-size: 19px;" data-toggle="modal" data-target="#modal_aide">
         <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
         <span>Aide</span>
     </button>
