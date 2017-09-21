@@ -36,6 +36,7 @@
 	<link rel="stylesheet" href="../css/bootstrap.css">
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="css/planning.css">
+        <link rel="stylesheet" href="css/colors.css">
 	<link rel="stylesheet" href="css/style_complexe.css">
 
 	</head>
@@ -61,10 +62,10 @@
 							</div>
 						</div>
 					</div>
-			<h1 class="titre_section">Gestion des tarifs</h1>
-			<div id="content_tarif">
+			<h1 class="text-center">Gestion des tarifs</h1>
+			<div id="content_tarif" class="fond-gris">
 				<?php include 'volet_tarifs.php'; ?>
-				<div id="corps" class="effet1 center">
+				<div id="corps" class="effet1 center fond-clair">
 					<div id="post_planning">
 						<?php 
 							//$lieu_id = $_SESSION['gerant_lieu_id'];

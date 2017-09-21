@@ -93,8 +93,6 @@ body{
 #corps{
 	padding-bottom: 0px;
 	padding: 5px;
-	background-color: #6BBA70;
-	background-color: #203721;
 }
 #post_planning{
 }
@@ -142,26 +140,21 @@ table {
 	min-height: 100px;
 }
 #page_principale{
-	margin: 15px;
-	padding: 15px;
+	margin: 0 15px;
+	padding: 0 15px;
 }
 #content_tarif{
 	margin: 15px 0;
 	padding: 15px;
-	background-color: darkslategrey;
 	-webkit-box-shadow: 4px 4px 8px 5px grey;
 	-moz-box-shadow: 4px 4px 8px 5px grey;
 	box-shadow: 4px 4px 8px 5px grey;
 	display: flex;
 }
-#content_tarif #corps{
-	background-color: #6BBA70;	
-}
 #volet-tarif{
 	margin-right: 15px;
 	padding: 5px;
 	min-width: 200px;
-	background-color: #6BBA70;	
 }
 .grand {
 	width: 100%;
@@ -170,14 +163,7 @@ table {
 	color: white;
 }
 #aide{
-    font-size: 19px;
-    color: white;
-    padding: 2px;
 	width: 100%;
-	text-align: center;
-    background-color:  darkslategrey;
-    border:	1px solid lightslategrey;
-	border-radius: 5px;
 }
 #aide:hover, #aide:focus {
 	color: #eeeeee;
