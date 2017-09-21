@@ -39,10 +39,6 @@
 											else{
 												$minutes = "30";
 											}
-
-<<<<<<< HEAD
-											<option value="<?php if ($heure2 == "24:00:00") {echo "00:00:00"; } else { echo $heure2; }?>"><?php echo intval($i).":".$minutes; ?></option>
-=======
 											if ($i == 24){
 												$datetime_string = '00:00:00';
 												$heure2 = '00:00:00';
@@ -58,7 +54,6 @@
 											
 											?>	
 												<option value="<?php echo $heure2; ?>"><?php echo intval($i).":".$minutes; ?></option>
->>>>>>> c8b7431e8ec749e89422615b8cb41d76d311eee0
 											<?php
 										}
 									?>
@@ -68,12 +63,7 @@
 								À  :		
 								<select name="heure_fin">
 									<?php
-<<<<<<< HEAD
-										for ($i=10; $i <= 24 ; $i=$i+0.5) { 
-=======
 										for ($i=8; $i <= 24 ; $i=$i+0.5) { 
-
->>>>>>> c8b7431e8ec749e89422615b8cb41d76d311eee0
 											if (intval($i) == $i){
 												$minutes = "00";
 											}
@@ -81,9 +71,6 @@
 												$minutes = "30";
 											}
 
-<<<<<<< HEAD
-											<option value="<?php if ($heure2 == "24:00:00") {echo "00:00:00"; } else { echo $heure2; }?>"><?php echo intval($i).":".$minutes; ?></option>
-=======
 											if ($i == 24){
 												$datetime_string = '00:00:00';
 												$heure2 = '00:00:00';
@@ -99,7 +86,6 @@
 
 											?>
 												<option value="<?php echo $heure2; ?>"><?php echo intval($i).":".$minutes; ?></option>
->>>>>>> c8b7431e8ec749e89422615b8cb41d76d311eee0
 											<?php
 										}
 									?>
