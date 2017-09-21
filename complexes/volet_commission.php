@@ -48,18 +48,30 @@
 								De :
 								<select name="heure_debut">
 									<?php
-										for ($i=10; $i < 23.5 ; $i=$i+0.5) { 
+										for ($i=8; $i < 24 ; $i=$i+0.5) { 
+
 											if (intval($i) == $i){
 												$minutes = "00";
 											}
 											else{
 												$minutes = "30";
 											}
-											$datetime_string = intval($i).':'.$minutes.':00';
-											$heure2 = intval($i).":".$minutes.":00";
-											?>
 
-											<option value="<?php echo $heure2; ?>"><?php echo intval($i).":".$minutes; ?></option>
+											if ($i == 24){
+												$datetime_string = '00:00:00';
+												$heure2 = '00:00:00';
+											}
+											elseif ($i < 10){
+												$datetime_string = '0'.intval($i).':'.$minutes.':00';
+												$heure2 = '0'.intval($i).":".$minutes.":00";
+											}
+											else{
+												$datetime_string = intval($i).':'.$minutes.':00';
+												$heure2 = intval($i).":".$minutes.":00";
+											}
+											
+											?>	
+												<option value="<?php echo $heure2; ?>"><?php echo intval($i).":".$minutes; ?></option>
 											<?php
 										}
 									?>
@@ -69,18 +81,30 @@
 								À  :		
 								<select name="heure_fin">
 									<?php
-										for ($i=10; $i < 23.5 ; $i=$i+0.5) { 
+										for ($i=8; $i <= 24 ; $i=$i+0.5) { 
+
 											if (intval($i) == $i){
 												$minutes = "00";
 											}
 											else{
 												$minutes = "30";
 											}
-											$datetime_string = intval($i).':'.$minutes.':00';
-											$heure2 = intval($i).":".$minutes.":00";
-											?>
 
-											<option value="<?php echo $heure2; ?>"><?php echo intval($i).":".$minutes; ?></option>
+											if ($i == 24){
+												$datetime_string = '00:00:00';
+												$heure2 = '00:00:00';
+											}
+											elseif ($i < 10){
+												$datetime_string = '0'.intval($i).':'.$minutes.':00';
+												$heure2 = '0'.intval($i).":".$minutes.":00";
+											}
+											else{
+												$datetime_string = intval($i).':'.$minutes.':00';
+												$heure2 = intval($i).":".$minutes.":00";
+											}
+
+											?>
+												<option value="<?php echo $heure2; ?>"><?php echo intval($i).":".$minutes; ?></option>
 											<?php
 										}
 									?>

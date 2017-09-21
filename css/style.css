@@ -13,6 +13,7 @@
 * ======================================================= */
 body {
   font-family: "Source Sans Pro", Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.8;
@@ -1253,5 +1254,41 @@ h1, h2, h3, h4, h5, h6 {
 }
 .navbar-default{
   background-color: white;
+}
+.logo{
+  padding: 2px;
+  letter-spacing: 1px;
+  color: white;
+}
+.encadre{
+  border: solid 1px white;
+  border-radius: 2px;
+  font-weight: 500;
+  color: white;
+}
+#div_logo{
+  display: block;
+  padding: 15px;
+  font-weight: 100;
+}
+.logo2{
+  padding: 2px;
+  letter-spacing: 1px;
+  color: #203721;
+}
+.encadre2{
+  border: solid 1px #203721;
+  border-radius: 2px;
+  font-weight: 500;
+}
+#div_logo2{
+  display: block;
+  padding: 15px;
+  font-weight: 100;
+}
+#slider{
+  background: #81a87e ; 
+  height: 1000px; 
+  padding-top: 150px;
 }
 /*# sourceMappingURL=style.css.map */
