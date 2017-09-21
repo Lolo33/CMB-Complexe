@@ -34,7 +34,7 @@
 	<meta name="twitter:card" content="" />
 	-->
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="images/imageedit_3_3588628750.png">
+	<link rel="shortcut icon" href="images/schedule.png">
 
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
 	
@@ -67,7 +67,15 @@
 			        	<!-- Mobile Toggle Menu Button -->
 
 						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-			          	<a class="navbar-brand" href="index.html"><img id="logo" src="images/imageedit_3_3588628750.png" alt="CmB" style="height: 50px;">  ConnectMyBooking.com</a>
+            <ul class="nav navbar-nav">
+            	<li>
+            		<div id="div_logo2">
+	            		<span class="logo2 encadre2">CONNECT</span>
+	            		<span class="logo2">MY</span>
+	            		<span class="logo2">BOOKING</span>
+            		</div>
+            	</li>
+            </ul>
 			        </div>
 			        <div id="navbar" class="navbar-collapse collapse">
 			          <ul class="nav navbar-nav navbar-right">
@@ -86,7 +94,7 @@
 			  <!-- </div> -->
 		  </div>
 	</header>
-	<div id="slider" data-section="home" style="background: #2BA14B; height: 1000px; padding-top: 150px;">
+	<div id="slider" data-section="home">
 		<div class="ligne" style="height: 500px;">
 			<div id="slogan" class="center liste espacer1" style="flex: 1;">
 				<h1 class=""><p id="p_slogan" class="center">Un planning <span class="rayer">connecté</span> collectif</p></h1>
@@ -114,7 +122,6 @@
 				<div class="col-md-4 to-animate">
 					<h2>Notre histoire</h2>
 					<p>
-	<?php var_dump($_SESSION); ?>
 						Connect My Booking, c'est l'histoire d'une startup qui voulait proposer une solutions à destination des joueurs de foot en salle, afin de leur faciliter la vie (et surtout l'organisation des matchs). Or nous avons rapidement compris que si nous voulions proposer une solution efficace, il nous faudrait l'accès au planning de réservation des complexes. En France, ce sont plus de 200 complexes donc il à fallu se faire une raison: le challenge est quasi impossible. De là est né Connect My Booking.
 						Un planning universel sur lequel les applications peuvent se "brancher" afin de travailler de manière synchroniser avec les complexes.
 

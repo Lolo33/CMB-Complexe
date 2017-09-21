@@ -88,27 +88,28 @@
 											else{
 												$minutes = "30";
 											}
+
+											if ($heure == 24){
+												$datetime_string = '00:00:00';
+												$heure2 = '00:00:00';
+											}
+											elseif ($heure < 10){
+												$datetime_string = '0'.intval($heure).':'.$minutes.':00';
+												$heure2 = '0'.intval($heure).":".$minutes.":00";
+											}
+											else{
+												$datetime_string = intval($heure).':'.$minutes.':00';
+												$heure2 = intval($heure).":".$minutes.":00";
+											}
 											?>
 												<tr>
 													<td class="heure"><?php echo intval($heure).':'.$minutes;?></td>
 													<?php
-														for ($i=1; $i < 7; $i++) { 
-															$datetime_string = intval($heure).':'.$minutes.':00';
-															$heure2 = intval($heure).":".$minutes.":00";
-															if (intval($heure) < 10){
-																$datetime_string = '0'.$datetime_string;
-																$heure2 = '0'.$heure2;
-															}
+														for ($i=1; $i < 7; $i++) {
 															case_complexe_horaire($jour_semaine = $i, $heure2);
 														}
 
 														// pour le dimanche
-														$datetime_string = intval($heure).':'.$minutes.':00';
-														$heure2 = intval($heure).":".$minutes.":00";
-														if (intval($heure) < 10){
-															$datetime_string = '0'.$datetime_string;
-															$heure2 = '0'.$heure2;
-														}
 														case_complexe_horaire(0, $heure2);
 													?>
 												</tr>

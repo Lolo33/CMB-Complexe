@@ -1055,21 +1055,33 @@ function maj_commissions($heure_debut, $heure_fin, $terrains, $aa, $jours, $comm
 	$db = connexionBdd();
 	$obj_heure_plage_debut = DateTime::createFromFormat('H:i:s', $heure_debut);
 	$obj_heure_plage_fin = DateTime::createFromFormat('H:i:s', $heure_fin);
-	if ($obj_heure_plage_debut < $obj_heure_plage_fin) {
+	if ($obj_heure_plage_debut < $obj_heure_plage_fin OR $heure_fin == "00:00:00") {
 		foreach ($terrains as $terrain_key => $terrain_value) {
 			foreach ($jours as $jour_key => $jour_value) {
 				foreach ($aa as $aa_key => $aa_value) {
 
 					$plages_com_terrain_aa = liste_commissions_terrain_aa($terrain_value, $aa_value);
 					foreach ($plages_com_terrain_aa as $plage_com_aa_key => $plage_com_aa_value) {
-						//echo "dernier foreach <br/>";
+						echo "dernier foreach <br/>";
 						if ($plage_com_aa_value['com_jour'] == $jour_value){
 							//echo "test du jour ok <br/>";
 							$obj_heure_plage_debut2 = DateTime::createFromFormat('H:i:s', $plage_com_aa_value['com_heure_debut']);
 							$obj_heure_plage_fin2 = DateTime::createFromFormat('H:i:s', $plage_com_aa_value['com_heure_fin']);
 							
 							//Si la plage déclarée inclue la plage testée, => DELETE (au profit de la nouvelle plage) [6-8] + [2-9] => [2-9]
-							if ($obj_heure_plage_debut <= $obj_heure_plage_debut2 AND $obj_heure_plage_fin >= $obj_heure_plage_fin2){
+							if (
+								$obj_heure_plage_debut <= $obj_heure_plage_debut2 
+								AND 
+								(
+									(
+										$obj_heure_plage_fin >= $obj_heure_plage_fin2
+										AND
+										$plage_com_aa_value['com_heure_fin'] != "00:00:00"
+									)
+									OR
+									$heure_fin == "00:00:00"
+								)
+							){
 								$req = $db->prepare('DELETE FROM planning_commission WHERE id = :id_com');
 								$req->bindValue(":id_com", $plage_com_aa_value['id'], PDO::PARAM_INT);
 								$req->execute();
@@ -1077,7 +1089,20 @@ function maj_commissions($heure_debut, $heure_fin, $terrains, $aa, $jours, $comm
 								//echo "delete";
 							}
 							//Si la nouvelle plage est inclu dans une plage plus grande => on scinde en plusieurs plages [1-9] + [2-5] => [1-2]+[2-5]+[5-9]
-							elseif ($obj_heure_plage_debut >= $obj_heure_plage_debut2 AND $obj_heure_plage_fin <= $obj_heure_plage_fin2){
+							elseif (
+								$obj_heure_plage_debut >= $obj_heure_plage_debut2 
+								AND 
+								(
+									(
+										$obj_heure_plage_fin <= $obj_heure_plage_fin2
+										AND
+										$heure_fin != "00:00:00"
+									)
+									OR
+									$plage_com_aa_value['com_heure_fin'] == "00:00:00"
+								)
+
+							){
 
 								// On vérifie qu'il s'agisse d'une MAj
 								if ($commission == $plage_com_aa_value['com_montant'] OR ($interdiction == 1 AND ( empty($plage_com_aa_value['com_montant']) OR $plage_com_aa_value['com_montant'] == NULL) ) ){
@@ -1160,7 +1185,29 @@ function maj_commissions($heure_debut, $heure_fin, $terrains, $aa, $jours, $comm
 								}
 							}
 							//Si chevauchement des plages cas 1 : [3-7] + [1-5] => [1-5] + [5-7]
-							elseif ($obj_heure_plage_debut < $obj_heure_plage_debut2 AND $obj_heure_plage_fin < $obj_heure_plage_fin2 AND $obj_heure_plage_fin > $obj_heure_plage_debut2){
+							elseif (
+								$obj_heure_plage_debut < $obj_heure_plage_debut2 
+								AND 
+								(
+									(
+										$obj_heure_plage_fin < $obj_heure_plage_fin2
+										AND
+										$heure_fin != "00:00:00"
+									)
+									OR
+									(
+										$heure_fin != "00:00:00"
+										AND
+										$plage_com_aa_value['com_heure_fin'] == "00:00:00"
+									)
+								)
+								AND 
+								(
+									$obj_heure_plage_fin > $obj_heure_plage_debut2
+									OR
+									$heure_fin == "00:00:00"
+								)
+							){
 									//echo "chevauchement 1 <br/>";
 									// maj le début l'acienne plage par réduction de la période
 									//insert la nouvelle
@@ -1176,7 +1223,29 @@ function maj_commissions($heure_debut, $heure_fin, $terrains, $aa, $jours, $comm
 									unset($req);
 							}
 							//Si chevauchement des plages cas 1 : [3-7] + [5-9] => [3-5] + [5-9]
-							elseif ($obj_heure_plage_debut > $obj_heure_plage_debut2 AND $obj_heure_plage_debut < $obj_heure_plage_fin2 AND $obj_heure_plage_fin > $obj_heure_plage_fin2){
+							elseif (
+								$obj_heure_plage_debut > $obj_heure_plage_debut2 
+								AND 
+								(
+									$obj_heure_plage_debut < $obj_heure_plage_fin2
+									OR
+									$plage_com_aa_value['com_heure_fin'] == "00:00:00"									
+								)
+								AND 
+								(
+									(
+										$obj_heure_plage_fin > $obj_heure_plage_fin2
+										AND
+										$plage_com_aa_value['com_heure_fin'] != "00:00:00"	
+									)
+									OR
+									(
+										$heure_fin == "00:00:00"
+										AND
+										$plage_com_aa_value['com_heure_fin'] != "00:00:00"
+									)
+								)
+							){
 									//echo "chevauchement 2 <br/>";
 									// maj le début l'acienne plage par réduction de la période
 									//insert la nouvelle
@@ -1232,7 +1301,7 @@ function maj_tarifs($heure_debut, $heure_fin, $terrains, $jours, $tarif){
 	$db = connexionBdd();
 	$obj_heure_plage_debut = DateTime::createFromFormat('H:i:s', $heure_debut);
 	$obj_heure_plage_fin = DateTime::createFromFormat('H:i:s', $heure_fin);
-	if ($obj_heure_plage_debut < $obj_heure_plage_fin) {
+	if ($obj_heure_plage_debut < $obj_heure_plage_fin OR $heure_fin == "00:00:00") {
 		foreach ($terrains as $terrain_key => $terrain_value) {
 			foreach ($jours as $jour_key => $jour_value) {
 				$plages_tarifs = liste_tarifs_terrain($terrain_value);
@@ -1244,7 +1313,19 @@ function maj_tarifs($heure_debut, $heure_fin, $terrains, $jours, $tarif){
 						$obj_heure_plage_fin2 = DateTime::createFromFormat('H:i:s', $plage_tarif_value['tarif_heure_fin']);
 							
 						//Si la plage déclarée inclue la plage testée, => DELETE (au profit de la nouvelle plage) [6-8] + [2-9] => [2-9]
-						if ($obj_heure_plage_debut <= $obj_heure_plage_debut2 AND $obj_heure_plage_fin >= $obj_heure_plage_fin2){
+						if (
+							$obj_heure_plage_debut <= $obj_heure_plage_debut2 
+							AND 
+							(
+								(
+									$obj_heure_plage_fin >= $obj_heure_plage_fin2
+									AND
+									$plage_tarif_value['tarif_heure_fin'] != "00:00:00"
+								)
+								OR
+								$heure_fin == "00:00:00"
+							)
+						){
 							$req = $db->prepare('DELETE FROM planning_tarif WHERE id = :id_tarif');
 							$req->bindValue(":id_tarif", $plage_tarif_value['id'], PDO::PARAM_INT);
 							$req->execute();
@@ -1252,7 +1333,19 @@ function maj_tarifs($heure_debut, $heure_fin, $terrains, $jours, $tarif){
 							//echo "delete";
 						}
 						//Si la nouvelle plage est inclu dans une plage plus grande => on scinde en plusieurs plages [1-9] + [2-5] => [1-2]+[2-5]+[5-9]
-						elseif ($obj_heure_plage_debut >= $obj_heure_plage_debut2 AND $obj_heure_plage_fin <= $obj_heure_plage_fin2){
+						elseif (
+							$obj_heure_plage_debut >= $obj_heure_plage_debut2 
+							AND 
+							(
+								(
+									$obj_heure_plage_fin <= $obj_heure_plage_fin2
+									AND
+									$heure_fin != "00:00:00"
+								)
+								OR
+								$plage_tarif_value['tarif_heure_fin'] == "00:00:00"
+							)
+						){
 
 								// On vérifie qu'il s'agisse d'une MAj
 								if ($tarif == $plage_tarif_value['tarif_montant']){
@@ -1333,7 +1426,29 @@ function maj_tarifs($heure_debut, $heure_fin, $terrains, $jours, $tarif){
 								}
 						}
 						//Si chevauchement des plages cas 1 : [3-7] + [1-5] => [1-5] + [5-7]
-						elseif ($obj_heure_plage_debut < $obj_heure_plage_debut2 AND $obj_heure_plage_fin < $obj_heure_plage_fin2 AND $obj_heure_plage_fin > $obj_heure_plage_debut2){
+						elseif (
+							$obj_heure_plage_debut < $obj_heure_plage_debut2 
+							AND 
+							(
+								(
+									$obj_heure_plage_fin < $obj_heure_plage_fin2
+									AND
+									$heure_fin != "00:00:00"
+								)
+								OR
+								(
+									$heure_fin != "00:00:00"
+									AND
+									$plage_tarif_value['tarif_heure_fin'] == "00:00:00"
+								)
+							)
+							AND
+							(
+								$obj_heure_plage_fin > $obj_heure_plage_debut2
+								OR
+								$heure_fin == "00:00:00"
+							)
+						){
 									//echo "chevauchement 1 <br/>";
 									// maj le début l'acienne plage par réduction de la période
 									//insert la nouvelle
@@ -1349,7 +1464,29 @@ function maj_tarifs($heure_debut, $heure_fin, $terrains, $jours, $tarif){
 									unset($req);
 						}
 						//Si chevauchement des plages cas 1 : [3-7] + [5-9] => [3-5] + [5-9]
-						elseif ($obj_heure_plage_debut > $obj_heure_plage_debut2 AND $obj_heure_plage_debut < $obj_heure_plage_fin2 AND $obj_heure_plage_fin > $obj_heure_plage_fin2){
+						elseif (
+							$obj_heure_plage_debut > $obj_heure_plage_debut2
+							AND 
+							(
+								$obj_heure_plage_debut < $obj_heure_plage_fin2
+								OR
+								$plage_tarif_value['tarif_heure_fin'] == "00:00:00"
+							)
+							AND 
+							(
+								(
+									$obj_heure_plage_fin > $obj_heure_plage_fin2
+									AND
+									$plage_tarif_value['tarif_heure_fin'] != "00:00:00"
+								)
+								OR
+								(
+									$heure_fin == "00:00:00"
+									AND
+									$plage_tarif_value['tarif_heure_fin'] != "00:00:00"
+								)
+							)
+						){
 									//echo "chevauchement 2 <br/>";
 									// maj le début l'acienne plage par réduction de la période
 									//insert la nouvelle
@@ -1384,10 +1521,4 @@ function maj_tarifs($heure_debut, $heure_fin, $terrains, $jours, $tarif){
 		return false;
 	}
 }
-
-
-
-
-
-
 ?>

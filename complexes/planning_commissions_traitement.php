@@ -17,8 +17,8 @@
 	}
 
 	maj_commissions($heure_debut, $heure_fin, $terrains, $aa, $jours, $commission, $interdiction);
-
-	header('location:planning_commissions.php');
+	echo "coucou";
+	//header('location:planning_commissions.php');
 
 
 

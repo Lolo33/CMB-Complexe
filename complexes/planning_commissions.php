@@ -82,7 +82,7 @@
 					<div id="post_planning">
 						<?php 
 							//$lieu_id = $_SESSION['gerant_lieu_id'];
-							$heure_min = 10;
+							$heure_min = 7;
 							$heure_max = 24.0;
 							
 						?>
@@ -99,19 +99,28 @@
 											else{
 												$minutes = "30";
 											}
+
+											if ($heure == 24){
+												$datetime_string = '00:00:00';
+												$heure2 = '00:00:00';
+											}
+											elseif ($heure < 10){
+												$datetime_string = '0'.intval($heure).':'.$minutes.':00';
+												$heure2 = '0'.intval($heure).":".$minutes.":00";
+											}
+											else{
+												$datetime_string = intval($heure).':'.$minutes.':00';
+												$heure2 = intval($heure).":".$minutes.":00";
+											}
 											?>
 												<tr>
 													<td class="heure"><?php echo intval($heure).':'.$minutes;?></td>
 													<?php
 														for ($i=1; $i < 7; $i++) {
-															$datetime_string = intval($heure).':'.$minutes.':00';
-															$heure2 = intval($heure).":".$minutes.":00";
 															case_complexe_commission($jour_semaine = $i, $heure2, $liste_terrains);
 														}
 
 														// pour le dimanche
-														$datetime_string = intval($heure).':'.$minutes.':00';
-														$heure2 = intval($heure).":".$minutes.":00";
 														case_complexe_commission(0, $heure2, $liste_terrains);
 													?>
 												</tr>
@@ -196,10 +205,22 @@ function case_complexe_commission ($jour_semaine, $heure, $liste_terrains){
 					$heure_fin_while = clone($obj_heure_plage_fin);
 					if ($plage_com_value['com_heure_debut'] == $heure AND $plage_com_value['com_jour'] == $jour_semaine ) {
 						$nb_demi_heure = 0;
-						while ($heure_debut_while < $heure_fin_while) {
-							$heure_debut_while->add(new DateInterval('PT30M'));
-							$nb_demi_heure++;
-						};
+
+						if ($plage_com_value['com_heure_fin'] == "00:00:00"){
+							$nb_heure = 24 - $heure_fin_while->format('H');
+							$nb_demi_heure = 2*$nb_heure;
+							if ($heure_fin_while->format('i') == "30"){
+								$nb_demi_heure--;
+							}
+						}
+						else{
+							while ($heure_debut_while < $heure_fin_while) {
+								$heure_debut_while->add(new DateInterval('PT30M'));
+								$nb_demi_heure++;
+							}
+						}
+
+
 
 						$hauteur = 23*$nb_demi_heure;
 						$hauteur = $hauteur.'px';
@@ -233,7 +254,7 @@ function case_complexe_commission ($jour_semaine, $heure, $liste_terrains){
 						$creneau_rempli = 1;
 						break 1;
 					}
-					elseif ($obj_heure > $obj_heure_plage_debut AND $obj_heure < $obj_heure_plage_fin AND $jour_semaine == $plage_com_value['com_jour']){
+					elseif ($obj_heure > $obj_heure_plage_debut AND ($obj_heure < $obj_heure_plage_fin OR $plage_com_value['com_heure_fin'] == "00:00:00") AND $jour_semaine == $plage_com_value['com_jour']){
 						// on ne fait rien car il s'agit d'une demi heure déjà comptée au sein d'une résa
 						$creneau_rempli = 1;
 						break 1;
