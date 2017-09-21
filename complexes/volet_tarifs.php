@@ -1,5 +1,5 @@
-<div id="volet-tarif" class="effet1">
-    <button id="aide" data-toggle="modal" data-target="#modal_aide">
+<div id="volet-tarif" class="effet1 fond-clair">
+    <button class="btn btn-grand" id="aide" style="padding:5px;" data-toggle="modal" data-target="#modal_aide">
         <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
         <span>Aide</span>
     </button>
@@ -102,7 +102,7 @@
 						<span> € </span>
 				</div>
 				<div class="center btn-form">
-					<input class="btn btn-success grand" type="submit" value="Valider">
+					<input class="btn btn-fonce grand" type="submit" value="Valider">
 				</div>
 						
 					</form>
