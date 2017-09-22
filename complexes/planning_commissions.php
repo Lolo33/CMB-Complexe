@@ -76,17 +76,15 @@
 						</div>
 					</div>
 			<h1 class="text-center">Gestion des apports d'affaires</h1>
-			<div id="content_tarif" class="fond-gris">
+			<div id="content_tarif" class="fond-blanc">
 				<?php include 'volet_commission.php'; ?>
-				<div id="corps" class="center fond-clair">
+				<div id="corps" class="center effet1 box fond-blanc contour-bleu">
 					<div id="post_planning">
 						<?php 
 							//$lieu_id = $_SESSION['gerant_lieu_id'];
 							$heure_min = 7;
 							$heure_max = 24.0;
-							
 						?>
-						<h3 style="color: white;">Apports d'affaires</h3>
 						<div class="tableau"> 
 								<table>
 									<?php 
@@ -114,7 +112,7 @@
 											}
 											?>
 												<tr>
-													<td class="heure"><?php echo intval($heure).':'.$minutes;?></td>
+													<td class="heure fond-pale bold"><?php echo intval($heure).':'.$minutes;?></td>
 													<?php
 														for ($i=1; $i < 7; $i++) {
 															case_complexe_commission($jour_semaine = $i, $heure2, $liste_terrains);
@@ -150,16 +148,16 @@ function entete_complexe_commission($tab_terrains){
 	global $liste_aa;
 	$db = connexionBdd();
 	$joursem = array('dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi');
-	$joursem2 = array('lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi','dimanche');
-	$colspan1 = count($liste_aa)*count($tab_terrains);
+    $joursem2 = array('Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche');
+    $colspan1 = count($liste_aa)*count($tab_terrains);
 	$colspan2 = count($liste_aa);
 	?>
 		<tr class="entete_complexe_jour" style="text-align: center">
-			<th rowspan="2" style="height: 46px;">Heure</th>
+			<th rowspan="2" class="fond-opaque" style="height: 46px;">Heure</th>
 			<?php   
 				for ($i=0; $i < 7; $i++) { 
 					?>
-						<th  colspan="<?php echo $colspan1; ?>" style="height: 23px;">
+						<th class="fond-fonce" colspan="<?php echo $colspan1; ?>" style="height: 23px;">
 							<div > <?php echo $joursem2[$i]; ?> </div>
 						</th>
 					<?php
@@ -171,7 +169,7 @@ function entete_complexe_commission($tab_terrains){
 				for ($i=1; $i < 8; $i++) {
 					foreach ($tab_terrains as $terrain_key => $terrain_value) {
 						?>
-							<td colspan="<?php echo $colspan2; ?>" style="height: 23px;">
+							<td class="fond-pale" colspan="<?php echo $colspan2; ?>" style="height: 23px;">
 								<?php echo $terrain_value['terrain_nom']; ?>
 							</td>
 						<?php

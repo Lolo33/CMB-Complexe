@@ -63,9 +63,9 @@
 			<h1 class="text-center">
                 Gérer votre planning en ligne
             </h1>
-			<div id="content_tarif" class="fond-gris">
+			<div id="content_tarif">
 				<?php include 'volet_planning.php'; ?>
-				<div id="corps" class="center effet1 fond-clair">
+				<div id="corps" class="center effet1 box fond-blanc contour-bleu">
 				<div id="post_planning" >
 					<?php
 						$format = 'Y-m-d'; 
@@ -123,7 +123,7 @@
 							</form>
 						</div>
 						<div>
-							<span style="margin-bottom 0; color: white;font-size: 22px;">Vos horaires du <?php echo $date_min->format("d-m-Y") . ' au ' . $date_max->format("d-m-Y"); ?></span>
+							<span style="margin-bottom 0;font-size: 22px;">Vos horaires du <?php echo $date_min->format("d-m-Y") . ' au ' . $date_max->format("d-m-Y"); ?></span>
 						</div>
 						<div>
 							<form action="planning.php" method="post">
@@ -455,8 +455,8 @@ function planning_popover(){
 }
 function entete_complexe($jourmin, $jourmax, $tab_terrains){
 	$db = connexionBdd();
-	$joursem = array('dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi');
-	$mois = array("janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "decembre");
+	$joursem = array('Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi');
+	$mois = array("Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre");
 	$colspan = count($tab_terrains);
 	?>
 		<tr class="entete_complexe_jour">
@@ -464,7 +464,7 @@ function entete_complexe($jourmin, $jourmax, $tab_terrains){
 				$jour = clone ($jourmin);
 				while ($jour <= $jourmax){
 					?>
-						<th colspan="<?php echo $colspan; ?>">
+						<th class="fond-fonce" colspan="<?php echo $colspan; ?>">
 							<div> 
 								<span><?php echo $joursem[$jour->format('w')]; ?></span>
 								<br/>
@@ -485,7 +485,7 @@ function entete_complexe($jourmin, $jourmax, $tab_terrains){
 				while ($jour <= $jourmax){
 					foreach ($tab_terrains as $terrain) {
 						?>
-							<td class="td_terrain">
+							<td class="td_terrain fond-pale">
 								<?php echo $terrain['terrain_nom']; ?>
 							</td>
 						<?php

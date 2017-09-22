@@ -5,9 +5,9 @@
 	if (!isset($_SESSION["id"])){
 		header("Location: ../index.php");
 	}
-	$joursem = array('dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi');
-	$joursem2 = array('lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi','dimanche');
-	$mois = array("janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "decembre");
+    $joursem = array('Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi');
+    $joursem2 = array('Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi','Dimanche');
+    $mois = array("Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre");
 	$lieu_id = $_SESSION['complexe_id'];
 	$liste_terrains = liste_terrain_lieu($lieu_id);
 	foreach ($liste_terrains as $terrain_key => $terrain_value) {
@@ -65,7 +65,7 @@
 			<h1 class="text-center">Gestion des tarifs</h1>
 			<div id="content_tarif" class="fond-gris">
 				<?php include 'volet_tarifs.php'; ?>
-				<div id="corps" class="effet1 center fond-clair">
+				<div id="corps" class="center effet1 box fond-blanc contour-bleu">
 					<div id="post_planning">
 						<?php 
 							//$lieu_id = $_SESSION['gerant_lieu_id'];
@@ -73,7 +73,6 @@
 							$heure_max = 24.0;
 							
 						?>
-						<h3 style="color: white;">Tarifs</h3>
 						<div class="tableau">
 								<table>
 									<?php 
@@ -101,7 +100,7 @@
 											}
 											?>
 												<tr>
-													<td class="heure"><?php echo intval($heure).':'.$minutes;?></td>
+													<td class="heure fond-pale bold"><?php echo intval($heure).':'.$minutes;?></td>
 													<?php
 														for ($i=1; $i < 7; $i++) { 
 
@@ -155,11 +154,11 @@ function entete_complexe_commission($tab_terrains){
 	$colspan = count($tab_terrains);
 	?>
 		<tr class="entete_complexe_jour" style="text-align: center">
-			<th rowspan="2" style="height: 46px;">Heure</th>
+			<th class="fond-opaque" rowspan="2" style="height: 46px;">Heure</th>
 			<?php   
 				for ($i=0; $i < 7; $i++) { 
 					?>
-						<th  colspan="<?php echo $colspan; ?>">
+						<th class="fond-fonce"  colspan="<?php echo $colspan; ?>">
 							<div> <?php echo $joursem2[$i]; ?> </div>
 						</th>
 					<?php
@@ -171,7 +170,7 @@ function entete_complexe_commission($tab_terrains){
 				for ($i=1; $i < 8; $i++) {
 					foreach ($tab_terrains as $terrain_key => $terrain_value) {
 						?>
-							<td>
+							<td class="fond-pale">
 								<?php echo $terrain_value['terrain_nom']; ?>
 							</td>
 						<?php
