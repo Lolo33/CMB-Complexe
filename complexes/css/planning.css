@@ -17,14 +17,15 @@
 	background-color: rgb(49,95,183);
 }
 .creneau_ferme{
-	background-color: #555555;
-	color: rgb(241,243,245);
+	background-color: #dddddd;
+	color: darkslategray;
 	font-weight: 500;
 	margin: 0px;
 	padding: 0px;
 }
 .creneau_ferme:hover{
-	background-color: #222222;
+	background-color: #555555;
+	color: rgb(241,243,245);
 }
 .creneau_ouvert{
 	font-weight: 100;
@@ -37,11 +38,10 @@
 	background-color: #cccccc;
 }
 .heure{
-	margin: 0px;
-	padding: 0px;
+	padding: 5px;
+	text-align: left;
 	vertical-align: top;
 	font-size: 13px;
-	line-height: 0.8;
 }
 td{
 	border-bottom: solid 1px #a9a9a9;
@@ -63,8 +63,6 @@ th{
 .td_terrain{
 	text-align: center;
 	border: solid 1px #a9a9a9;
-	color: #eeeeee;
-	background-color: #333333;
 
 }
 .btn2{
@@ -180,6 +178,6 @@ label span {
 	color: #333333;
 }
 #corps th{
-	background-color: white;
-	color: #333333;
+	font-weight: bold;
+
 }

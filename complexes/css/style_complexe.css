@@ -1,13 +1,3 @@
-body{
-	color: black;
-}
-#header1{
-	width: 100%;
-	margin: 0px;
-	padding: 0px;
-	background-color: #2BA14B;
-	color: white;
-}
 .liste label {
 	font-size: 12px;
 }
@@ -87,9 +77,6 @@ body{
 	min-width: 295px;
 	background-color: #F1F3F5;
 }
-#volet2 h3{
-	color: white;
-}
 #corps{
 	padding-bottom: 0px;
 	padding: 5px;
@@ -146,9 +133,6 @@ table {
 #content_tarif{
 	margin: 15px 0;
 	padding: 15px;
-	-webkit-box-shadow: 4px 4px 8px 5px grey;
-	-moz-box-shadow: 4px 4px 8px 5px grey;
-	box-shadow: 4px 4px 8px 5px grey;
 	display: flex;
 }
 #volet-tarif{
@@ -158,9 +142,6 @@ table {
 }
 .grand {
 	width: 100%;
-}
-#volet-tarif h3{
-	color: white;
 }
 #aide{
 	width: 100%;

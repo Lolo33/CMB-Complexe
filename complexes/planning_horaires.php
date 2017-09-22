@@ -5,9 +5,9 @@
 	if (!isset($_SESSION["id"])){
 		header("Location: ../index.php");
 	}
-	$joursem = array('dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi');
-	$joursem2 = array('lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi','dimanche');
-	$mois = array("janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "decembre");
+	$joursem = array('Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi');
+	$joursem2 = array('Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi','Dimanche');
+	$mois = array("Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre");
 	$lieu_id = $_SESSION['complexe_id'];
 	$horaires = liste_horaires_complexe($_SESSION['complexe_id']);
 	$id_histo = tracerComplexe();
@@ -27,13 +27,13 @@
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
 	<meta name="author" content="FREEHTML5.CO" />
-
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
 	
 	<link rel="stylesheet" href="../css/bootstrap.css">
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="css/planning.css">
 	<link rel="stylesheet" href="css/style_complexe.css">
+        <link rel="stylesheet" href="css/colors.css">
 
 	</head>
 		<?php //include('head.php'); ?>
@@ -44,12 +44,6 @@
 		
 		<?php include 'volet.php'; ?>
 		<div id="page_principale"  class="effet1">
-					<div>
-						<button id="aide" data-toggle="modal" data-target="#modal_aide">
-							<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-							<span>Aide</span>
-						</button>
-					</div>
 					<div class="modal fade" id="modal_aide" tabindex="-1" role="dialog">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
@@ -64,10 +58,10 @@
 							</div>
 						</div>
 					</div>
-			<h1 class="titre_section">Gestion des horaires</h1>
+			<h1 class="text-center">Gestion des horaires</h1>
 			<div id="content_tarif">
 				<?php include 'volet_horaires.php'; ?>
-				<div id="corps" class="effet1 center">
+				<div id="corps" class="center effet1 box fond-blanc contour-bleu">
 					<div id="post_planning">
 						<?php 
 							//$lieu_id = $_SESSION['gerant_lieu_id'];
@@ -75,7 +69,6 @@
 							$heure_max = 24.0;
 							
 						?>
-						<h3 style="color: white;">Horaire</h3>
 						<div class="tableau">
 								<table>
 									<?php 
@@ -103,7 +96,7 @@
 											}
 											?>
 												<tr>
-													<td class="heure"><?php echo intval($heure).':'.$minutes;?></td>
+													<td class="heure bold fond-pale"><?php echo intval($heure).':'.$minutes;?></td>
 													<?php
 														for ($i=1; $i < 7; $i++) {
 															case_complexe_horaire($jour_semaine = $i, $heure2);
@@ -141,11 +134,11 @@ function entete_complexe_horaire(){
 	global $joursem2;
 	?>
 		<tr class="entete_complexe_jour" style="text-align: center">
-			<th style="height: 23px;">Heure</th>
+			<th class="fond-opaque" style="height: 23px;">Heure</th>
 			<?php   
 				for ($i=0; $i < 7; $i++) { 
 					?>
-						<th>
+						<th class="fond-fonce">
 							<div> <?php echo $joursem2[$i]; ?> </div>
 						</th>
 					<?php

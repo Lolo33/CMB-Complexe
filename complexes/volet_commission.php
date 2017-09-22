@@ -1,4 +1,4 @@
-<div id="volet-tarif" class="effet1 fond-clair">
+<div id="volet-tarif" class="effet1 box fond-blanc contour-bleu">
     <button class="btn" id="aide" style="padding:5px;" data-toggle="modal" data-target="#modal_aide">
         <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
         <span>Aide</span>
